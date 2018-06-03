@@ -1,0 +1,33 @@
+﻿<div class="home-container">
+    <div class="home-search">
+        <div class="row">
+            <div class="col-sm-2 col-xs-12">
+                <span class="home-search-heading">Saved Searches</span>
+            </div>
+            <div class="col-sm-5 col-xs-12">
+                <label class="home-search-label">Show:</label>
+                <div class="select select--bordered home-search-select" data-type="select-one" role="listbox" tabindex="1" aria-haspopup="true"
+                     aria-expanded="false" dir="ltr">
+                    <xl-select *ngIf="showList" [list]="showList" (optionSelected)="showSelectedHandler($event)"></xl-select>
+                </div>
+            </div>
+            <div class="col-sm-5 col-xs-12">
+                <label class="home-search-label" for="">Filter:</label>
+                <div class="select select--bordered home-search-select" data-type="select-one" role="listbox" tabindex="0" aria-haspopup="true"
+                     aria-expanded="false" dir="ltr">
+                    <xl-select *ngIf="teamFilterList" [list]="teamFilterList" (optionSelected)="filterSelectedHandler($event)">
+                    </xl-select>
+                  
+                </div>
+                <div class="excel-class">
+                    <a (click)="exceldownlad()" title="Export Excel" class="excle-icon" [class.enabled-link]="programCount>0"> <img src="../../assets/SVG/Spreadsheet.svg" /></a>
+                </div>
+            </div>
+            <!--<div class="col">
+                <a (click)="exceldownlad()" title="Export Excel" [class.enabled-link]="programCount>0">Export</a>
+            </div>-->
+        </div>
+    </div>
+    <rwb-portfolio-view [datasource]="programs" [filteredDatasource]="filteredPrograms" [sortby]="'cedantName'" (filterCriteria)="onPortfolioFilterEvent($event)"></rwb-portfolio-view>    
+</div>
+

@@ -1,0 +1,135 @@
+<div class="form-group row">
+  <label class="col-2" for="">Company</label>
+  <div class="col-4">
+    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.companyKey" (ngModelChange)="onCompanyChange($event)" *ngIf="!IsRenwalForm">
+      <option *ngFor="let company of companies" #CompanyOptions 
+              value="{{company.companyKey}}" [selected]="company.companyKey===submission.companyKey"> {{company.companyName}}</option>
+    </select>
+    <input type="text" id="txtCompanyname" *ngIf="IsRenwalForm"
+           name="companyname" class="form-control text-input"
+           [(ngModel)]="submission.companyName"
+           [disabled]="IsRenwalForm">
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-2" for="">Underwriter</label>
+  <div class="col-4">
+    <select class="col select select--bordered text-input full-width" id="ddlUnderwriter" [(ngModel)]="submission.underwriter" (ngModelChange)="onUWChange($event)" *ngIf="!IsRenwalForm">
+      <option *ngFor="let uw of underwriters" #UWOptions value="{{uw.loginName}}" [selected]="uw.loginName===submission.underwriter"> {{uw.underwriterName}}</option>
+    </select>
+    <input type="text" id="txtUnderWriter" *ngIf="IsRenwalForm"
+           name="UnderWriter" class="form-control text-input"
+           [(ngModel)]="submission.underwriterDisplayName"
+           [disabled]="IsRenwalForm">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-2" for="">Effective Date</label>
+  <div class="col-4">
+    <md-input-container style="margin-left: 5px;" *ngIf="!IsRenwalForm">
+      <input mdInput name="effectiveDate"
+             [mdDatepicker]="dpEffectiveDate"
+             [(ngModel)]="submission.effectiveDate"
+             placeholder="" (blur)="selectEffectiveDateChanged($event.target.value)"
+             [disabled]="IsRenwalForm">
+      <button mdSuffix [mdDatepickerToggle]="dpEffectiveDate" [disabled]="IsRenwalForm"></button>
+      <!--<md-datepicker-toggle mdSuffix [for]="dpEffectiveDate" [disabled]="IsRenwalForm"></md-datepicker-toggle>-->
+    </md-input-container>
+    <md-datepicker #dpEffectiveDate (selectedChanged)="selectEffectiveDateChanged($event)"></md-datepicker>
+
+    <input type="text" id="txtEffDate" *ngIf="IsRenwalForm"
+           name="effDate" class="form-control text-input"
+           [(ngModel)]="submission.effectiveDate"
+           [disabled]="IsRenwalForm">
+
+  </div>
+  <!--<div class="date-picker">
+    <input type="text" class="date-picker__field" />
+  </div>-->
+</div>
+<div class="form-group row">
+  <label class="col-2" for="">Expiration Date</label>
+  <div class="col-4">
+    <md-input-container style="margin-left: 5px;" *ngIf="!IsRenwalForm">
+      <input mdInput name="expirationDate"
+             [mdDatepicker]="dpExpirationDate"
+             [(ngModel)]="submission.expirationDate"
+             placeholder=""
+             [disabled]="IsRenwalForm">
+      <button mdSuffix [mdDatepickerToggle]="dpExpirationDate" [disabled]="IsRenwalForm"></button>
+      <!--<md-datepicker-toggle mdSuffix [for]="dpExpirationDate" [disabled]="IsRenwalForm"></md-datepicker-toggle>-->
+    </md-input-container>
+    <md-datepicker #dpExpirationDate></md-datepicker>
+
+    <input type="text" id="txtEprDate" *ngIf="IsRenwalForm"
+           name="eprDate" class="form-control text-input"
+           [(ngModel)]="submission.expirationDate"
+           [disabled]="IsRenwalForm">
+
+  </div>
+  <!--<div class="date-picker">
+    <input type="text" class="date-picker__field" />
+  </div>-->
+</div>
+
+<div class="form-group row">
+  <label class="col-2" for="">UW Year</label>
+  <div class="col-4">
+    <input type="text" id="txtUwYear" placeholder="Year"
+           name="uwYear" class="form-control text-input"
+           [(ngModel)]="submission.uwYear" maxlength="4" (keypress)="onKeypress($event)"
+           [class.ng-invalid]="!submission.uwYear || submission.uwYear.length != 4"
+           [disabled]="IsRenwalForm || IsNewSubForm">
+  </div>
+</div>
+
+<div class="form-group row" *ngIf="isfiscalYear">
+  <label class="col-2" for="">Fiscal Year</label>
+  <div class="col-4">
+
+    <input type="text" id="txtFiscalYear" [disabled]="true"
+           name="FiscalYear" class="form-control text-input"
+           [(ngModel)]="fiscalYear">
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-2" for="">Program Title</label>
+  <div class="col-4 flex-wrap">
+    <input type="search" class="form-control text-input" id="txtProgramTitle" placeholder="Program Title..." name="programTitle" [(ngModel)]="submission.programTitle"
+           [class.ng-invalid]="!submission.programTitle"
+           maxlength="60" (keypress)="onKeypress($event)"
+           [disabled]="IsRenwalForm || IsAddNewContractForm">
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-2" for="">Cedant Name</label>
+  <div class="col-4">
+    <div class="auto-complete">
+      <input type="search" class="auto-complete__field" id="txtCedentName" placeholder="Cedant Name..."
+             name="cedantKey" [(ngModel)]="submission.cedantName"
+             [class.ng-invalid]="!submission.cedantKey"
+             [disabled]="IsRenwalForm">
+    </div>
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-2" for="">Broker Name</label>
+  <div class="col-4">
+    <div class="auto-complete">
+      <input type="search" class="auto-complete__field" id="txtBrokerName" placeholder="Broker Name..."
+             name="brokerKey" [(ngModel)]="submission.brokerName"
+             [class.ng-invalid]="!submission.brokerKey"
+             [disabled]="IsRenwalForm">
+    </div>
+  </div>
+</div>
+<div class="form-group row" *ngIf="showWorkflowAssignedUser">
+  <label class="col-2" for="">Workflow Assigned</label>
+  <div class="col-4">
+    <select class="select select--bordered text-input full-width" [(ngModel)]="submission.workFlowAssginedUser" name="workFlowAssginedUser" (ngModelChange)="onWorkFlowAssignedChange($event)" *ngIf="!IsRenwalForm">
+      <option *ngFor="let workFlowAssign of workFlowAssignies" #WorkflowAssignedOptions value="{{workFlowAssign.loginName}}" [selected]="workFlowAssign.loginName===undefined || workFlowAssign.loginName===null || workFlowAssign.loginName===''"> {{workFlowAssign.displayName}}</option>
+    </select>
+  </div>
+</div>

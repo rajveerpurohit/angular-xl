@@ -1,0 +1,19 @@
+﻿<h2>Add a new program</h2>
+<h4>Please note all fields are required to complete the form</h4>
+<div class="grid mt-m">
+  <form #submissionForm="ngForm" (ngSubmit)="addSubmission()" style="margin-left: 18px;" autocomplete="off">    
+    <uwwb-submission-addon [(submission)]="newsubmission" [IsRenwalForm]="false" [IsNewSubForm]="true" 
+                     (submissionChange)="submissionChangedEvent($event)"
+                     (afterInit)="afterInitEvent($event)"
+                     ></uwwb-submission-addon>
+
+    <div class="form-group row">
+      <div class="col-2"></div>
+      <div class="col-4">              
+        <button type="submit" class="button" [disabled]="!isValid">Add new program</button>
+        <button id="btnSubmissionReset" type="button" class="button button--secondary" style="margin-left:20px;" (click)="reset()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+

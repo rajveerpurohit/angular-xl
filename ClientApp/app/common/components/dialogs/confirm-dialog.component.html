@@ -1,0 +1,28 @@
+﻿<div class="over-layer" *ngIf="display">
+    <div class="lightbox" style="display: flex;">
+        <div class="lightbox__inner">
+            <div class="lightbox__content" style="max-width:400px">
+                <div id="save-search">
+                    <h2>{{title}}</h2>
+                    <p class="mt-xs">{{message}}</p>
+                    <div class="grid mt-s">
+                        <div class="row">
+                            <div class="col-8 ml-a mr-a">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="button full-width text-center" type="button" id="save-search-submit" (click)="onOk()">Ok</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="button button--secondary full-width text-center" type="button" (click)="onCancel()" id="save-search-cancel">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

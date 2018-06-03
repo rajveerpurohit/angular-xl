@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="16" cy="16" r="16"></circle>
+        <rect x="3" y="5" width="27" height="27" id="rect-3"></rect>
+    </defs>
+    <g id="13.-Program-Details---Default" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-916.000000, -272.000000)">
+        <g id="Group-2" transform="translate(917.000000, 273.000000)">
+            <circle id="Oval-3" stroke="#4A4A4A" fill="#F7F7F7" cx="16" cy="16" r="16"></circle>
+            <g id="single-01">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#F7F7F7" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)">
+                    <image x="3" y="5" width="27" height="27" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAedJREFUWAntVj1OwzAUJqQLG2ydKnICwgkIajvDysgJKDdpT4DYYCsbUlsl3CCcIByhB2hVvs84VhvSvJeoRQy1FNl+f9/nZ+fZ3lHNFkXReavVeoBbhC+07in6ZLFYjJIk+bIyVeeprKxRt9sdep5H8Ko2nE6nj1UG6zo1AYCnAL9Yd64YpyBxWaF3Kt+NKgZ25TcVJkVVOwiCsyzL3ouK4lzMgN3zrOiomeNMBNKZOJYC+b4/kGy26TW+IgEEj7YBSHKcmSvJRiRQ4+CVYeW/aZnOyEQCWz13pDgQEDOwWq0+m2Zb4ysSAHjSlIDGVySwXC6HTQlofEUCrGRI5aguCfpIVZAxxVKcA9e5jLj3s9lMrAGMLWYgJ8CAmkzQRgvO2KrbMCfB263T6TyjOjJzJ+ja1HHF6F6x53dxHL9QdmjaDIiHsNfrRQjGW+0UnzlYSHmI9HPuGmRzyFIrYM95MplMPpxRyeAXgX6/z8PG188tvrDEp4mIhMYg9AZCHLvmCODlc4oHxBOMCLy3hsWNcVjvUSPmBDEECI6ndox5uDfkzcApnmvXJGHqAMAHfwhOKqHF/ClESMte0765eDczr2yTAey79r3vvHcwMNutLsU7ACwNcSDwPzKAv6Dxu690YxXCHPMb16mfHjaUutUAAAAASUVORK5CYII="></image>
+                    <use fill="#9B9B9B" fill-rule="evenodd" xlink:href="#rect-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+﻿<div *ngIf="visible" style="position:absolute;z-index:1000;width:100%;">
+    <div class="progress-bar progress-bar-custom">
+
+        <div class="progress-bar__item progress-bar__item-custom" style="flex-basis:845px;" *ngFor="let trackingDates of contractCurrentTrackingDates;">
+            <div class="progress-bar__item-title">{{trackingDates.key}}</div>
+            <div class="progress-bar__item-text">
+                <span class="custom-date-font">
+                    <material-datepicker [(date)]="trackingDates.value" [disabled]="readonly" (dateChange)="dateChanged($event, trackingDates.key)"></material-datepicker>
+                </span>
+            </div>
+        </div>        
+    </div>
+</div>

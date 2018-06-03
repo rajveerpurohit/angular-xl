@@ -1,0 +1,33 @@
+﻿<div>
+    <div id="sidebar-container">
+        <xl-navmenu></xl-navmenu>
+    </div>    
+    <div id="main-container" class="main">
+        <div class="header-bar">
+            <div class="grid">
+                <div class="row">
+                    <div class="col flex-align-center">
+                        <div class="header-bar__title">Reinsurance Workbench</div>
+                    </div>
+                    <div class="col">
+                        <div class="dropdown-list dropdown-list--dark ml-a">
+                            <div class="dropdown-list__title">{{userName}}</div>
+                            <!--<ul class="dropdown-list__list">
+                              <li class="dropdown-list__list-item"><a class="dropdown-list__link" href="#">A menu item</a></li>
+                              <li class="dropdown-list__list-item"><a class="dropdown-list__link" href="#">A menu item</a></li>
+                              <li class="dropdown-list__list-item"><a class="dropdown-list__link" href="#">A menu item</a></li>
+                              <li class="dropdown-list__list-item"><a class="dropdown-list__link" href="#">A menu item</a></li>
+                            </ul>-->
+                        </div>
+                        <img style="cursor:pointer; width:32px; height:32px;" id="btnChangeUser" class="img-circle ml-xs" src='' />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width: 97.5%; padding:0 23px;">        
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+    <change-user></change-user>
+    <rwb-blocak-ui></rwb-blocak-ui>

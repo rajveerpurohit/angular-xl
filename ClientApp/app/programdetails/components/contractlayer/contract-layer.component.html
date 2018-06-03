@@ -1,0 +1,596 @@
+﻿<div class="table-scroller mt-m">
+    <div class="table-scroller__pinned">
+        <table cellspacing="0" cellpadding="0" border="0" class="data-table data-table__label-columns">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="col-3">
+                            <select class="table-layers" (change)="onYesNoLayersFilterChanged($event.target.value);">
+                                <option class="table-layers-dropdown" value="ALL">Show all layers</option>
+                                <option class="table-layers-dropdown" value="YES">Show Yes only</option>
+                                <option class="table-layers-dropdown" value="NO">Show No only</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Destiny Contract -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideDestinyContract">
+                    <td>
+                       Destiny Contract
+                    </td>
+                </tr>
+
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td>Destiny Contract #</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td>Layer Title</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td>Destiny Status</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td>GNPI</td>
+                </tr>
+                <!-- Layer Structure -->
+
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideLayerStructure">
+                    <td>
+                        Layer Structure
+                    </td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td>Limit</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideLayerStructure">
+                    <td>Event Limit</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td>Deductible</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td>AAD</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td>AAL</td>
+                </tr>
+
+                <!-- Share/Linesize -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideShareLinesize">
+                    <td>
+                        Share/Linesize
+                    </td>
+                </tr>
+
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td>Written Share</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td>Estimated Signed Share</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td>Signed Share</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td>$ Share of Limit</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td>$ Share of Premium</td>
+                </tr>
+
+                <!-- Firm Order Terms -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideFirmOrderTerms">
+                    <td>
+                        Firm Order Terms
+                    </td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideFirmOrderTerms" class="row-firmorderterms">
+                    <td>Rate</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td>Premium</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!isProportional && !hideFirmOrderTerms">
+                    <td>Selected Tech Premium</td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideFirmOrderTerms" class="row-firmorderterms">
+                    <td>ROL</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td>RAL</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td>ROE</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td>Ultimate Loss Ratio</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td>Technical Ratio</td>
+                </tr>
+
+                <!-- Quote -->
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideQuote">
+                    <td>
+                        Quote
+                    </td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideQuote" class="row-quote">
+                    <td>Rate</td>
+                </tr>
+                <tr class="row-quote" *ngIf="!hideQuote">
+                    <td>Premium</td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideQuote" class="row-quote">
+                    <td>ROL</td>
+                </tr>
+
+                <!-- Rate Change -->
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideRageChange">
+                    <td>
+                        Rate Change
+                    </td>
+                </tr>
+
+                <tr class="row-ratechange" *ngIf="!hideRageChange">
+                    <td>Total Rate Change (incl Acq Costs)</td>
+                </tr>
+
+                <!-- Acq. Costs and Expenses -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideAcqCostsExpense">
+                    <td>
+                        Acq. Costs and Expenses
+                    </td>
+                </tr>
+                <tr class="row-acqcostsandexpenses" *ngIf="!hideAcqCostsExpense">
+                    <td>Ceding Commission</td>
+                </tr>
+                <tr class="row-acqcostsandexpenses" *ngIf="!hideAcqCostsExpense">
+                    <td>Brokerage</td>
+                </tr>
+
+                <!-- Budget/Plan -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideBudgetPlan">
+                    <td >Budget/Plan</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td>Expiring Premium</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td title="Calculated based on Contract Inception Rate">Plan Premium</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td title="Calculated based on Contract Inception Rate">Plan Rate Change</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td title="Calculated based on Contract Inception Rate">Plan ULR</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td title="Calculated based on Contract Inception Rate">Plan Tech. Ratio</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <td title="Calculated based on Contract Inception Rate">Variance Actual vs Budget</td>
+                </tr>
+
+                <!-- Destiny Flags -->
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideDestinyFlags">
+                    <td>
+                        Flags
+                    </td>
+                </tr>
+                <tr class="row-destinyflags" *ngIf="!hideDestinyFlags">
+                    <td>Sanction Clause</td>
+                </tr>
+                <tr class="row-destinyflags" *ngIf="!hideDestinyFlags">
+                    <td>Referral</td>
+                </tr>
+
+                <!-- Commissions -->
+
+                <tr *ngIf="isProportional" class="data-table__heading-row" [class.collapse-section-header]="hideCommissions">
+                    <td (click)="hideCommissions=!hideCommissions;">
+                        &nbsp;Commissions
+                    </td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td>Fixed Commission</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td>Expected Variable Commission</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td>Profit Commission</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td>Sliding Scale Commission</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td>Loss Corridor</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-scroller__scroller">
+        <table cellspacing="0" cellpadding="0" border="0" class="data-table" style="width:100%;">
+            <tbody>
+                <tr class="data-table__column-headings">
+                    <td [ngClass]="(layerRow.layerFlag == 'YES')?'data-table__column-heading--status-yes':'data-table__column-headings'"
+                        style="width:90px; padding-top: 18px;" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.layerNumber">{{isProportional ? (layerRow.layerNumber=='3' ? 'Combined' : 'Treaty '+layerRow.layerNumber) : (layerRow.layerNumber=='total' ? 'Total' : 'Layer '+layerRow.layerNumber)}}</span>
+                        <span *ngIf="layerRow.layerNumber === null || 0 ">&nbsp;</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Destiny Contract -->
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideDestinyContract">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideDestinyContract=!hideDestinyContract"><span></span></a></td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td *ngFor="let layerRow of layers;">
+                        <a *ngIf="layerRow.destinyContractNumber" class="button button--text-only" title="{{layerRow.destinyContractNumber}}" href="Destiny.ica?contnum={{layerRow.destinyContractNumber}}">{{layerRow.destinyContractNumber}}</a>
+                        <span *ngIf="!layerRow.destinyContractNumber">N/A</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td *ngFor="let layerRow of layers;">
+                        <span title="{{layerRow.layerTitle}}">{{layerRow.layerTitle}}</span>
+                        <span *ngIf="!layerRow.layerTitle">N/A</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td *ngFor="let layerRow of layers;">
+                        <span title="{{layerRow.status}}">{{layerRow.status}}</span>
+                        <span *ngIf="!layerRow.status">N/A</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-destinycontract" *ngIf="!hideDestinyContract">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.gnpi">{{layerRow.gnpi | numericFormat }}</span>
+                        <span *ngIf="!layerRow.gnpi">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Layer Structure -->
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideLayerStructure">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideLayerStructure=!hideLayerStructure"><span></span></a></td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.limit">{{layerRow.limit  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.limit">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="isProportional && !hideLayerStructure">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.eventLimit">{{layerRow.eventLimit  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.eventLimit">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.deductible">{{layerRow.deductible  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.deductible">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.aad">{{layerRow.aad  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.aad">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-layerstructure" *ngIf="!hideLayerStructure">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.aal">{{layerRow.aal  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.aal">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Share/Linesize -->
+
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideShareLinesize">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideShareLinesize=!hideShareLinesize"><span></span></a></td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.writtenShare">{{layerRow.writtenShare | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.writtenShare">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.estimatedSignedShare">{{layerRow.estimatedSignedShare  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.estimatedSignedShare">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.signedShare">{{layerRow.signedShare  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.signedShare">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.shareOfLimit ">{{layerRow.shareOfLimit  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.shareOfLimit">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-sharelinesize" *ngIf="!hideShareLinesize">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.shareOfPremium  ">{{layerRow.shareOfPremium  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.shareOfPremium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Firm Order Terms -->
+
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideFirmOrderTerms">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideFirmOrderTerms=!hideFirmOrderTerms"><span></span></a></td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideFirmOrderTerms" class="row-firmorderterms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.rate">{{layerRow.rate | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.rate">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.premium">{{layerRow.premium | numericFormat}}</span>
+                        <span *ngIf="!layerRow.premium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!isProportional && !hideFirmOrderTerms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.selectedTechPremium">{{layerRow.selectedTechPremium  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.selectedTechPremium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideFirmOrderTerms" class="row-firmorderterms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.rol">{{layerRow.rol  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.rol">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.ral">{{layerRow.ral  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.ral">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.roe">{{layerRow.roe  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.roe">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.ultimateLossRatio">{{layerRow.ultimateLossRatio  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.ultimateLossRatio">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-firmorderterms" *ngIf="!hideFirmOrderTerms">
+                    <!--<td>Technical Ratio</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.technicalRatio">{{layerRow.technicalRatio  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.technicalRatio">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Quote -->
+
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideQuote">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideQuote=!hideQuote"><span></span></a></td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideQuote" class="row-quote">
+                    <!--<td>Rate</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.quoteRate">{{layerRow.quoteRate  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.quoteRate">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-quote" *ngIf="!hideQuote">
+                    <!--<td>Premium</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.quotePremium">{{layerRow.quotePremium  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.quotePremium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="!isProportional && !hideQuote" class="row-quote">
+                    <!--<td>ROL</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.quoteROL">{{layerRow.quoteROL  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.quoteROL">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Rate Change -->
+
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideRageChange">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideRageChange=!hideRageChange"><span></span></a></td>
+                </tr>
+                <tr class="row-ratechange" *ngIf="!hideRageChange">
+                    <!--<td>Total Rate Change (incl Acq Costs)</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.totalRateChangeInclAcqCosts">{{layerRow.totalRateChangeInclAcqCosts  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.totalRateChangeInclAcqCosts">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Acq. Costs and Expenses -->
+
+                <tr class="data-table__heading-row" [class.collapse-section-header]="hideAcqCostsExpense">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideAcqCostsExpense=!hideAcqCostsExpense"><span></span></a></td>
+                </tr>
+                <tr class="row-acqcostsandexpenses" *ngIf="!hideAcqCostsExpense">
+                    <!--<td>Ceding Commission</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.cedingCommission">{{layerRow.cedingCommission  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.cedingCommission">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-acqcostsandexpenses" *ngIf="!hideAcqCostsExpense">
+                    <!--<td>Brokerage</td>-->
+                    <td *ngFor="let layerRow of layers;">
+
+                        <span *ngIf="layerRow.brokerage">{{layerRow.brokerage  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.brokerage">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Budget/Plan -->
+
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideBudgetPlan">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideBudgetPlan=!hideBudgetPlan"><span></span></a></td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.expiringPremium ">{{layerRow.expiringPremium  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.expiringPremium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td title="Calculated based on Contract Inception Rate" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.planPremium ">{{layerRow.planPremium  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.planPremium">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td title="Calculated based on Contract Inception Rate" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.planRateChange ">{{layerRow.planRateChange  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.planRateChange">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td title="Calculated based on Contract Inception Rate" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.planULR ">{{layerRow.planULR  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.planULR">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td title="Calculated based on Contract Inception Rate" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.planTechRatio ">{{layerRow.planTechRatio  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.planTechRatio">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-budgetplan" *ngIf="!hideBudgetPlan">
+                    <!--<td>Expiring Premium</td>-->
+                    <td title="Calculated based on Contract Inception Rate" *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.varianceActualvsBudget ">{{layerRow.varianceActualvsBudget  | numericFormat}}</span>
+                        <span *ngIf="!layerRow.varianceActualvsBudget">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Destiny Flags -->
+
+                <tr class="data-table__heading-row"  [class.collapse-section-header]="hideDestinyFlags">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideDestinyFlags=!hideDestinyFlags"><span></span></a></td>
+                </tr>
+                <tr class="row-destinyflags" *ngIf="!hideDestinyFlags">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="!layerRow.sanctionClause"><input type="checkbox" disabled /></span>
+                        <span *ngIf="layerRow.sanctionClause"><input type="checkbox" checked="{{layerRow.sanctionClause==true ?  'checked' : ''}}" disabled /></span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="row-destinyflags" *ngIf="!hideDestinyFlags">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="!layerRow.referral"><input type="checkbox" disabled /></span>
+                        <span *ngIf="layerRow.referral"><input type="checkbox" checked="{{layerRow.referral==true ?  'checked' : ''}}" disabled /></span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <!-- Commissions -->
+
+                <tr *ngIf="isProportional" class="data-table__heading-row"  [class.collapse-section-header]="hideCommissions">
+                    <td [attr.colspan]="layers.length">&nbsp;</td>
+                    <td class="section-header"><a (click)="hideCommissions=!hideCommissions"><span></span></a></td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.fixedCommission">{{layerRow.fixedCommission  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.fixedCommission">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.expectedVariableCommission">{{layerRow.expectedVariableCommission  | percent:'.0-1'}}</span>
+                        <span *ngIf="!layerRow.expectedVariableCommission">-</span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.layerNumber=='3'">-</span>
+                        <span *ngIf="layerRow.layerNumber!='3'"><input type="checkbox" checked="{{layerRow.profitCommission==true ?  'checked' : ''}}" disabled /></span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.layerNumber=='3'">-</span>
+                        <span *ngIf="layerRow.layerNumber!='3'"><input type="checkbox" checked="{{layerRow.slidingScaleCommission==true ?  'checked' : ''}}" disabled /></span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngIf="isProportional && !hideCommissions" class="row-commissions">
+                    <td *ngFor="let layerRow of layers;">
+                        <span *ngIf="layerRow.layerNumber=='3'">-</span>
+                        <span *ngIf="layerRow.layerNumber!='3'"><input type="checkbox" checked="{{layerRow.lossCorridor==true ? 'checked' : ''}}" disabled /></span>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,365 @@
+<div style="width:100%; margin:15px 5px;">
+    <div class="labelled-heading">
+        <h2 class="labelled-heading__heading text-sentence-case">
+            <span>{{programTitle}} ({{programNumber}})</span>
+            <span style="color:green; font-size:18px; height:15px;width:15px;">
+                <a (click)="renew(programNumber)" *ngIf="isReadyForRenewal && IsDestinyReadWriteUser" style="cursor:pointer;">
+                    <svg width="15" height="15" viewBox="0 0 14 14">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circle-renew"></use>
+                    </svg>
+                </a>
+                <i class="fa fa-check-circle" aria-hidden="true" *ngIf="isRenewed" title="Renewed"></i>
+            </span>
+        </h2>
+    </div>
+    <div *ngIf="true" class="tabbed mt-m" id="program-tabs" style="overflow-x: auto;">
+        <ul class="tabbed__tabs nav nav-tabs">
+            <li class="tabbed__tab" [class.active]="y == 0" *ngFor="let contract of programDetail; let y = index">
+                <a class="tabbed__tab-link" data-toggle="tab" href="#tab-{{contract.entry.xLeRateContractNumber}}" (click)="onContractTabClick(contract)">
+                    <span class="tabbed__tab-title contract-title-ellipsis" title="{{contract.entry.xLeRateContractTitle}}">
+                        {{contract.entry.xLeRateContractTitle == ''? 'N/A' : contract.entry.xLeRateContractTitle}}
+                    </span>
+                    <span class="tabbed__tab-subtitle rwb-sub-title">{{contract.entry.class == ''? '&nbsp;' : contract.entry.class}}</span>
+                </a>
+            </li>
+            <!--new contract creation-->
+            <li class="tabbed__tab" *ngIf="IsDestinyReadWriteUser">
+                <a class="tabbed__tab-link" href="#" (click)="addNewContract(programNumber)">
+                    <span class="tabbed__tab-title" style=" color:black; font-size:large;">
+                        <svg width="18" height="18" viewBox="0 0 18 18">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use>
+                        </svg>
+                        Add New Contract
+                    </span>
+                    <span class="tabbed__tab-subtitle rwb-sub-title">&nbsp;</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="tabbed_content-container" style="background: #fff; position: relative;">
+            <div class="tabbed__content" [class.active]="y == 0" id="tab-{{contracts.entry.xLeRateContractNumber}}" *ngFor="let contracts of programDetail;" style="border-top:none;">
+                <div class="drawer-bar">
+                    <div class="drawer-bar__item bar__item_custom" [ngClass]="showViewDocumentDialog ? 'progress_bar-active' : ''">
+                        <div class="drawer-bar__item-title" (click)="IsDestinyReadWriteUser && showViewDocument()"
+                             ng2FileDrop
+                             [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                             (fileOver)="fileOverBase($event)"
+                             [uploader]="uploader">
+                             <span class="drop-target-image"><img src="../../../../assets/SVG/Drop traget.svg"></span>
+                            <span id="spnViewDoc" *ngIf="viewDocLength >= 0">{{viewDocLength}}</span>
+                            <span *ngIf="viewDocLength === null || viewDocLength === undefined" style="color:cadetblue;">Loading</span>
+                            Documents
+                            <span [ngClass]="showViewDocumentDialog?'show_program-details':'hide_program-details'"></span>
+                        </div>
+                    </div>
+                    <div class="drawer-bar__item bar__item_custom" [ngClass]="showUpdateTrackingDatesDialog ? 'progress_bar-active' : ''">
+                        <div class="drawer-bar__item-title" (click)="showUpdateTrackingDate()">
+                            {{latestTrackingStatus}} {{latestTrackingDate}}
+                            <span [ngClass]="showUpdateTrackingDatesDialog ? 'show_program-details':'hide_program-details'"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div *ngIf="IsDestinyReadWriteUser && showViewDocumentDialog" class="document-container">
+                    <rwb-view-doc [(visible)]="showViewDocumentDialog" [programNumber]="programNumber" [data]="viewDoc" [xlerateContractNumbers]="xlerateContractNumbers"
+                                  (onShowUploadDocumentEvent)="showUploadDocument()"
+                                  (onViewDocumentClosedEvent)="onViewDocumentClosed($event)" [isReadWriteUser]="IsDestinyReadWriteUser">
+                    </rwb-view-doc>
+                </div>
+
+                <!--Tracking Dates-->
+                <rwb-update-tracking-dates [(visible)]="showUpdateTrackingDatesDialog" [readonly]="!IsDestinyReadWriteUser" [(programSelectedVersion)]="selectedVersionForTrackingDates" [(contractCurrentTrackingDates)]="defaultTrackingDatesLst" (onUpdateTrackingDateClosedEvent)="onUpdateTrackingDateClosed($event)" (onUpdateTrackingDateEvent)="onUpdateTrackingDate($event)">
+                </rwb-update-tracking-dates>
+
+                <div>
+                    <div class="identity-card-panel">
+                        <div class="grid grid--auto-cols">
+                            <div class="row">
+                                <div class="col-sm-4 col-xs-12">
+                                    <div class="col identity-card-box">
+                                        <div class="grid grid--auto-cols">
+                                            <div class="row identity-card-content">
+                                                <div class="col-2">
+                                                    <img src="src/assets/SVG/Cedant.svg" />
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="labelled-heading">
+                                                        <div class="labelled-heading__label">Cedant</div>
+                                                        <div class="labelled-heading__heading">
+                                                            <a target="_blank" href="{{recap_CedantLink}}">{{contracts.entry.cedantName}}</a>
+                                                        </div>
+                                                        <div class="labelled-heading__subheading">{{currentCedantAddressSecurityStatus.street1}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12">
+                                    <div class="col identity-card-box">
+                                        <div class="grid grid--auto-cols">
+                                            <div class="row identity-card-content">
+                                                <div class="col-2">
+                                                    <img src="src/assets/SVG/Broker.svg" />
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="labelled-heading">
+                                                        <div class="labelled-heading__label">Broker</div>
+                                                        <div>
+                                                        </div>
+                                                        <div class="labelled-heading__heading">
+                                                            <a target="_blank" href="{{recap_BrokerLink}}">{{contracts.entry.broker}}</a>
+                                                        </div>
+                                                        <div class="labelled-heading__subheading">{{contracts.entry.brokerContact == null ? 'N/A' : contracts.entry.brokerContact}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="col-sm-4 col-xs-12">
+                                    <div class="col identity-card-box">
+                                        <div class="grid grid--auto-cols">
+                                            <div class="row identity-card-content">
+                                                <div class="col-2">
+                                                    <img width="32" height="32" src="">
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="labelled-heading">
+                                                        <div class="labelled-heading__label">Underwriter</div>
+                                                        <div class="labelled-heading__heading">
+                                                            <a href="#">{{contracts.entry.underwriter}}</a>
+                                                        </div>
+                                                        <div class="labelled-heading__subheading">{{contracts.entry.xlCompany}}</div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="identity-card__footer">
+                                                <div class="grid grid--auto-cols">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="labelled-heading labelled-heading--horizontal">
+                                                                <div class="labelled-heading__label">ACTUARY</div>
+                                                                <div class="labelled-heading__sublabel">{{contracts.entry.actuary}}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid--auto-cols program-detail-area">
+                        <div class="row program-detail-area-nav">
+                            <div class="col-sm-10 col-xs-12">
+                                <div>
+                                    <img class="effective-date" src="src/assets/SVG/Effective Date.svg" />
+                                </div>
+                                <div>
+                                    <span class="program-detail-area-label">
+                                        Effective&nbsp;Date
+                                    </span>
+                                    <span class="program-detail-area-date">                                        
+                                        {{contracts.entry.expirationDate | date:'dd MMM yyyy'}}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="program-detail-area-label">
+                                        Expiration&nbsp;Date
+                                    </span>
+                                    <span class="program-detail-area-date">
+                                        {{contracts.entry.expirationDate | date:'dd MMM yyyy'}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 col-xs-12">
+                                <div class="program-detail-area-collapse" (click)="handleCollapseEvent()">
+                                    <div *ngIf="programDetailArea">
+                                        Hide Program Details
+                                        <div class="hideDetails"></div>
+                                    </div>
+                                    <div *ngIf="!programDetailArea">
+                                        Show Program Details
+                                        <div class="showDetails"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="programDetailArea" class="row program-detail-area-container">
+                            <div class="program-detail-area-content">
+                                <table cellspacing="0" cellpadding="0" class="info-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Cedant Duns</td>
+                                            <td class="program-details__value fixed-height">
+                                                {{contracts.entry.cedantDUNS}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Cedant Domicile</td>
+                                            <td class="program-details__value fixed-height">
+                                                {{contracts.entry.cedantDomicile}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Terr. Scope</td>
+                                            <td class="program-details__value fixed-height">
+                                                {{contracts.entry.terrScope}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Planning Lob</td>
+                                            <td class="program-details__value fixed-height">                                                
+                                                <span *ngIf="contracts.entry.planningLOB">{{contracts.entry.planningLOB}}</span>
+                                                <span *ngIf="!contracts.entry.planningLOB">N/A</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Region</td>
+                                            <td class="program-details__value fixed-height">
+                                                {{contracts.entry.region}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Destiny Prog #</td>
+                                            <td class="program-details__value fixed-height">
+                                                {{contracts.entry.destinyProgramNumber}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div class="program-detail-area-content">
+                                <table cellspacing="0" cellpadding="0" class="info-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">UW Year</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.uwYear}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">LOB</td>
+                                            <td class="program-details__value fixed-height" title="{{contracts.entry.lob}}">{{contracts.entry.lob}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Program Type</td>
+                                            <td class="program-details__value fixed-height" title="{{contracts.entry.programType}}">{{contracts.entry.programType}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Basis Cover</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.basisCover}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Champion Region</td>
+                                            <td class="program-details__value fixed-height">
+                                                <span *ngIf="contracts.entry.championRegion">{{contracts.entry.championRegion}}</span>
+                                                <span *ngIf="!contracts.entry.championRegion">N/A</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Champion Destiny Program #</td>
+                                            <td class="program-details__value fixed-height" title="{{contracts.entry.championDestinyProgramNumber}}">
+                                                <span *ngIf="contracts.entry.championDestinyProgramNumber">{{contracts.entry.championDestinyProgramNumber}}</span>
+                                                <span *ngIf="!contracts.entry.championDestinyProgramNumber">N/A</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div class="program-detail-area-content">
+                                <table cellspacing="0" cellpadding="0" class="info-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">New or renew</td>
+                                            <td class="program-details__value fixed-height">
+                                                <span *ngIf="contracts.entry.newOrRenew">{{contracts.entry.newOrRenew}}</span>
+                                                <span *ngIf="!contracts.entry.newOrRenew">N/A</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Multi-year contract</td>
+                                            <td class="program-details__value fixed-height">
+                                                <span *ngIf="contracts.entry.multiYearContract">{{contracts.entry.multiYearContract}}</span>
+                                                <span *ngIf="!contracts.entry.multiYearContract">N/A</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Currency</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.currency}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Ref. Currency</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.refCurrency}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">ROX</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.rox}}</td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="program-details__label fixed-height">Rox as at</td>
+                                            <td class="program-details__value fixed-height">{{contracts.entry.roxAsAt | date:'dd MMM yyyy' }}</td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="layer-padding">
+                        <div class="grid mt-m">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="labelled-heading">
+                                        <div class="labelled-heading__heading">
+                                            {{contracts.entry.programType}}
+                                        </div>
+                                        <div class="labelled-heading__label">
+                                            {{contracts.entry.xLeRateContractTitle}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col flex-align-bottom">
+                                    <table cellspacing="0" cellpadding="0" class="info-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="info-table__label">Xlerate Contract</td>
+                                                <td class="info-table__value">{{contracts.entry.xLeRateContractNumber}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-xs">
+                            <div class="append append--select">
+                                <div class="append__target">
+                                    <select id="select-quote-{{contracts.entry.xLeRateContractNumber}}" class="select select--bordered"></select>
+                                </div>
+                                <div class="append__content">
+                                    <a href="#" (click)="CheckXleRateAppInstance(contracts.entry.xLeRateContractNumber)" class="button button--text-with-icon">View in XLeRate <svg class="button__text-icon" width="14" height="14" viewBox="0 0 14 14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external-launcher"></use></svg></a>
+                                    <a href="XLeRate.ica?version={{currentVersion.entry.xLeRateVersionNumber}}" id="hrefXleRateCitrixApp" style="width: 1px; height:1px;"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <rwb-contract-layer [layers]="tableVal" [isProportional]="IsCurrentContractIsProportional">
+                        </rwb-contract-layer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="currentCtr">
+        <rwb-upload-doc [(visible)]="showAttachmentPopup" [uploader]="uploader" (onclosed)="onUploadClosed($event)" (onCompleted)="onUploadCompleted($event)"
+                        [programNumber]="programNumber"
+                        [contractGuid]="currentCtr.entry.xLeRateContractNumber"
+                        [xlerateContractNumbers]="xlerateContractNumbers">
+        </rwb-upload-doc>
+    </div>
+</div>

@@ -1,0 +1,207 @@
+﻿[
+  {
+    "releaseNoteDescription": "R2.0c -- Release Notes on 03/09/2018",
+    "workItemList": [
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13744",
+        "workItemNo": "13744",
+        "workItemDescription": "RWB: Search Screen Enhancements - Part 2",
+        "subWorkItems": [
+          "1. UAT Enhancement - Increase no. of filtered programs to min 20 before user clicks Load more",
+          "3. R2 Requirement - Save Search - Please refer attached document for additional details",
+          "4. Simple Search and Advance Search currently showing Displaying field drop down with ‘-NA-‘. Change the label name as ‘All’. No additional changes to the logic - 3.12.40"
+        ],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13754",
+        "workItemNo": "13754",
+        "workItemDescription": "RWB: Details View Enhancements - Foolproof inputs required",
+        "subWorkItems": [
+          "4. Provide a Ready to Renew & Already Renewed ICONs beside the Program Number in Details view.",
+          "6. Add Company address and Security status to Cedant and Broker in Details view.(Layout will change in the next release based on the new design)",
+          "7.  Add Layer title under 'Destiny Contract' header after Destiny Contract # and Add Technical cost under  'Firm Order Terms'  after Technical Ratio - Please refer the attached document in the Request for the details",
+          "8. Add Total Columns in Details View - Please refer the attached document in the Request for the details",
+          "10. Required change to current Broker and UW box sizes – it should maintain the same for these boxes and accommodate the Address",
+          "11. Hide 'View in ReDoc' option from Details view"
+        ],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13914",
+            "workItemNo": "13914",
+            "workItemDescription": "RWB: Add Totals and Technical Cost Values to Workbench Details View"
+          }
+        ]
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=14155",
+        "workItemNo": "14155",
+        "workItemDescription": "RWB: Documents Classification Changes",
+        "subWorkItems": [
+          "1. Document Classification - Setting of the XLeRate contract key  in RWB ",
+          "2. Document Repository - Document Classification "
+        ],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13731",
+            "workItemNo": "13731",
+            "workItemDescription": "RWB: Document Classification - ReDoc"
+          }
+        ]
+      },
+      {
+        "workItemLink": "",
+        "workItemNo": "",
+        "workItemDescription": "Fixed defect# 194,195,196,198,199,201,205,208",
+        "subWorkItems": [
+        ],
+        "dependencyWorkItems": []
+      }
+    ]
+  },
+  {
+    "releaseNoteDescription": "R2.0b -- Release Notes on 02/23/2018",
+    "workItemList": [
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13720",
+        "workItemNo": "13720",
+        "workItemDescription": "RWB: Portfolio View and Search Enhancements - CR: Sharing program details via email using MSGKIT",
+        "subWorkItems": [],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13721",
+        "workItemNo": "13721",
+        "workItemDescription": "RWB: View & Attach Documents Enhancements - RWB",
+        "subWorkItems": [],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13731",
+            "workItemNo": "13731",
+            "workItemDescription": "RWB: Document Classification - ReDoc(Fixed the defect that 'N/A' and 'Other' options missed from the docucment type list)"
+          }
+        ]
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13754",
+        "workItemNo": "13754",
+        "workItemDescription": "RWB: Details View Enhancements - Foolproof inputs required",
+        "subWorkItems": [
+          "3. Ability to expand and collapse all the headers within the details view.",
+          "9. Once a particular version is Authorized or Bound in pricing, going forward those versions will be defaulted on workbench."
+        ],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13823",
+        "workItemNo": "13823",
+        "workItemDescription": "RWB: Underwriting Year option missing in Search parameters",
+        "subWorkItems": [],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/DefaultCollection/XLGroup.XLRE.PricingSystems/_workitems/edit/13824",
+            "workItemNo": "13824",
+            "workItemDescription": "RWB:Underwriting Year option missing in Search parameters"
+          }
+        ]
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13876",
+        "workItemNo": "13876",
+        "workItemDescription": "RWB: Clearance Report",
+        "subWorkItems": [],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13802",
+        "workItemNo": "13802",
+        "workItemDescription": "RWB: Portfolio View and Search Enhancements - Part 2",
+        "subWorkItems": [
+          "2. Change Request # 22 - Add  ‘Expiry Date ‘ to Search Results grid & Portfolio View Grid"
+        ],
+        "dependencyWorkItems": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "releaseNoteDescription": "R2.0a -- Release Notes on 02/09/2018",
+    "workItemList": [
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13825",
+        "workItemNo": "13825",
+        "workItemDescription": "RWB: Browser 'back' button must retain search results",
+        "subWorkItems": [
+        ],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13720",
+        "workItemNo": "13720",
+        "workItemDescription": "RWB: Portfolio View and Search Enhancements",
+        "subWorkItems": [
+          "1. UAT Enhancement - Program Details in New Tab or Right click with new window.",
+          "2. UAT Enhancement - Sharing Program Details via Email(Developed as per the original requirements)"
+        ],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13721",
+        "workItemNo": "13721",
+        "workItemDescription": "RWB: View & Attach Documents Enhancements - RWB",
+        "subWorkItems": [
+          "1. Document Classification - Setting of the XLeRate contract key  in RWB.",
+          "2. Document Repository - Document Classification."
+        ],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13731",
+            "workItemNo": "13731",
+            "workItemDescription": "RWB: Document Classification - ReDoc"
+          }
+        ]
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13713",
+        "workItemNo": "13713",
+        "workItemDescription": "RWB: Ability to open 2nd version in existing XleRate instance with Separate Tab",
+        "subWorkItems": [],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13714",
+            "workItemNo": "13714",
+            "workItemDescription": "XLeRate: Ability to open 2nd version in existing XleRate instance with Separate Tab"
+          }
+        ]
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13968",
+        "workItemNo": "13968",
+        "workItemDescription": "RWB: ReCap Integration",
+        "subWorkItems": [],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13803",
+        "workItemNo": "13803",
+        "workItemDescription": "RWB: New Submission Enhancements",
+        "subWorkItems": [],
+        "dependencyWorkItems": []
+      },
+      {
+        "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13800",
+        "workItemNo": "13800",
+        "workItemDescription": "RWB: Proportional Contract Specific Fields",
+        "subWorkItems": [],
+        "dependencyWorkItems": [
+          {
+            "workItemLink": "http://stadb1478:8080/web/wi.aspx?pcguid=0bd7d57f-cc42-442e-b7f9-65591bb4a0e7&id=13801",
+            "workItemNo": "13801",
+            "workItemDescription": "XLeRate: Proportional Contract Specific Fields"
+          }
+        ]
+      }
+    ]
+  }
+]

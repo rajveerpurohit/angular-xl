@@ -1,0 +1,41 @@
+﻿<div [@dialog] *ngIf="visible" class="dialog">
+  <div id="classModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header" style="height: 25px; text-align:center;">
+        <h2>Document Repository</h2>
+      </div>
+      <hr />
+      <div class="modal-content" style="background-color:#fff !important;">
+        <div class="modal-body" style="height:300px;overflow-y:auto;">
+          <div class="table-responsive">
+            <table class="listing-table listing-table--clickable-rows mt-xs">
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <th>Type</th>
+                  <th>Type</th>
+                  <th>Date Added</th>
+                  <th>Short Description</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="viewDoc">
+                <tr *ngFor="let docs of viewDoc">
+                  <td><a href="/api/program/GetDocuments?argDocumentID={{docs.documentID}}">{{docs.document}}</a></td>
+                  <td>{{docs.type}}</td>
+                  <td>
+                    {{docs.subType}}
+                  </td>
+                  <td>{{docs.addedDt | date:'dd MMM yyyy'}}</td>
+                  <td>{{docs.shortDescription}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="button" (click)="close()" style="float:right; margin-top:5px;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

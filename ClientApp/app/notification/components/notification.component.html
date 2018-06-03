@@ -1,0 +1,10 @@
+﻿<div class="notice {{messageStyle}}" *ngIf="show && message">
+    <div class="notice__title">{{messageType}}</div>
+    <div class="notice__description">
+        {{message}}
+    </div>
+    <button class="button button--icon-only notice__close-button" (click)="closeNotice()">
+        <svg width="17" height="17" viewBox="0 0 17 17"><use xlink:href="#cross"></use></svg>
+    </button>
+</div>
+<br />

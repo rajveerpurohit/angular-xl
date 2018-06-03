@@ -1,0 +1,533 @@
+/*
+Name:   Duotone Light
+Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
+
+Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-morning-light.css)
+Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
+*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  background: #faf8f5;
+  color: #728fcb;
+}
+
+/* pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #faf8f5;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #faf8f5;
+}
+ */
+
+/* Code blocks */
+
+pre[class*="language-"] {
+  padding: 20px;
+  margin: 0;
+  overflow: auto;
+}
+
+/* Inline code */
+
+.theme-v1-1503068776805-:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-comment,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-prolog,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-doctype,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-cdata {
+  color: #b6ad9a;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-punctuation {
+  color: #b6ad9a;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-namespace {
+  opacity: .7;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-tag,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-operator,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-number {
+  color: #063289;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-property,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-function {
+  color: #b29762;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-tag-id,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-selector,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-atrule-id {
+  color: #2d2006;
+}
+
+code.theme-v1-1503068776805-language-javascript,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-attr-name {
+  color: #896724;
+}
+
+code.theme-v1-1503068776805-language-css,
+code.theme-v1-1503068776805-language-scss,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-boolean,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-string,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-entity,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-url,
+.theme-v1-1503068776805-language-css .theme-v1-1503068776805-token.theme-v1-1503068776805-string,
+.theme-v1-1503068776805-language-scss .theme-v1-1503068776805-token.theme-v1-1503068776805-string,
+.theme-v1-1503068776805-style .theme-v1-1503068776805-token.theme-v1-1503068776805-string,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-attr-value,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-keyword,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-control,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-directive,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-unit,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-statement,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-regex,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-atrule {
+  color: #728fcb;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-placeholder,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-variable {
+  color: #93abdc;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-deleted {
+  text-decoration: line-through;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-inserted {
+  border-bottom: 1px dotted #2d2006;
+  text-decoration: none;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-italic {
+  font-style: italic;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-important,
+.theme-v1-1503068776805-token.theme-v1-1503068776805-bold {
+  font-weight: bold;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-important {
+  color: #896724;
+}
+
+.theme-v1-1503068776805-token.theme-v1-1503068776805-entity {
+  cursor: help;
+}
+
+pre > code.theme-v1-1503068776805-highlight {
+  outline: .4em solid #896724;
+  outline-offset: .4em;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+
+.theme-v1-1503068776805-line-numbers .theme-v1-1503068776805-line-numbers-rows {
+  border-right-color: #ece8de;
+}
+
+.theme-v1-1503068776805-line-numbers-rows > span:before {
+  color: #cdc4b1;
+}
+
+/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ */
+
+.theme-v1-1503068776805-line-highlight {
+  background: rgba(45, 32, 6, 0.2);
+  background: -webkit-linear-gradient(left, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
+  background: linear-gradient(to right, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
+}
+
+.theme-v1-1503068776805-body {
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-v1-1503068776805-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #1A1A18;
+}
+
+.theme-v1-1503068776805-inner-header {
+  display: flex;
+}
+
+.theme-v1-1503068776805-header-title {
+  color: #FFFCE3;
+  align-self: center;
+  margin-left: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.theme-v1-1503068776805-branding {
+  float: left;
+  color: #FFF;
+  width: 25%;
+}
+
+.theme-v1-1503068776805-branding > svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.theme-v1-1503068776805-header-links {
+  list-style: none;
+  margin-left: auto;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.theme-v1-1503068776805-header-links > li {
+  float: left;
+  margin-left: 20px;
+}
+
+.theme-v1-1503068776805-header-links > li > a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.theme-v1-1503068776805-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.theme-v1-1503068776805-sidebar {
+  font-family: "Open Sans", sans-serif;
+  float: left;
+  width: 25%;
+  border: 1px solid #CDCDCD;
+  border-radius: 2px;
+}
+
+.theme-v1-1503068776805-centered {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.theme-v1-1503068776805-main {
+  float: right;
+  width: calc(75% - 40px);
+}
+
+.theme-v1-1503068776805-navigation-list,
+.theme-v1-1503068776805-navigation-child-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-v1-1503068776805-navigation-child-list {
+  border-top: 1px solid #EEE;
+}
+
+.theme-v1-1503068776805-navigation-item:not(:last-child),
+.theme-v1-1503068776805-navigation-child-item:not(:last-child) {
+  border-bottom: 1px solid #EEE;
+}
+
+.theme-v1-1503068776805-navigation-link,
+.theme-v1-1503068776805-navigation-child-link {
+  padding: 10px;
+  display: block;
+  color: #777;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.theme-v1-1503068776805-navigation-link:hover,
+.theme-v1-1503068776805-navigation-child-link:hover {
+  background-color: #EEE;
+}
+
+.theme-v1-1503068776805-navigation-child-link-external {
+  background-image: url("data:image/svg+xml,  %3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E    %3C!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch --%3E    %3Cdesc%3ECreated with Sketch.%3C/desc%3E    %3Cdefs%3E%3C/defs%3E    %3Cg id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E        %3Cg id='Navigation-/-Menu-launcher' transform='translate(-157.000000%2C -11.000000)' fill-rule='nonzero' fill='%239B9B9B'%3E            %3Cpath d='M168.5%2C23 L157.5%2C23 C157.224%2C23 157%2C22.776 157%2C22.5 L157%2C11.5 C157%2C11.224 157.224%2C11 157.5%2C11 L162%2C11 L162%2C12 L158%2C12 L158%2C22 L168%2C22 L168%2C18 L169%2C18 L169%2C22.5 C169%2C22.776 168.776%2C23 168.5%2C23 Z M169%2C11 L169%2C16.5 L166.6035%2C14.1035 L163.3535%2C17.3535 L162.6465%2C16.6465 L165.8965%2C13.3965 L163.5%2C11 L169%2C11 Z' id='Shape'%3E%3C/path%3E        %3C/g%3E    %3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+}
+
+.theme-v1-1503068776805-navigation-child-link {
+  padding-left: 30px;
+}
+
+.theme-v1-1503068776805-h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 5px;
+}
+
+.theme-v1-1503068776805-h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.theme-v1-1503068776805-h2:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.theme-v1-1503068776805-h3:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-example {
+  margin-top: 20px;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  padding: 20px;
+}
+
+.theme-v1-1503068776805-example.theme-v1-1503068776805-shaded {
+  background-color: #F7F7F7;
+}
+
+.theme-v1-1503068776805-example + .theme-v1-1503068776805-code {
+  margin-top: -1px;
+}
+
+.theme-v1-1503068776805-code {
+  border: 1px solid #DDD;
+  border-radius: 0 0 3px 3px;
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-code-example {
+  background-color: #EEE;
+  padding: 30px;
+}
+
+.theme-v1-1503068776805-info {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-info > p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+.theme-v1-1503068776805-info > p:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-info > ul {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+.theme-v1-1503068776805-info > ul > li:not(:first-child) {
+  margin-top: 4px;
+}
+
+.theme-v1-1503068776805-info > ul:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-info > h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+  text-transform: none;
+}
+
+.theme-v1-1503068776805-info > h2:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-info code {
+  background-color: #F3F4F4;
+  border-radius: 3px;
+  padding: 0.2em 0;
+}
+
+.theme-v1-1503068776805-info code:before,
+.theme-v1-1503068776805-info code:after {
+  content: "\00a0";
+  letter-spacing: -0.2em;
+}
+
+.theme-v1-1503068776805-group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+.theme-v1-1503068776805-faux-browser {
+  margin-top: 30px;
+}
+
+.theme-v1-1503068776805-faux-browser__bar {
+  position: relative;
+  background-color: #EEE;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 38px;
+}
+
+.theme-v1-1503068776805-faux-browser__body {
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.theme-v1-1503068776805-faux-browser__body > pre {
+  margin: 0;
+}
+
+.theme-v1-1503068776805-faux-browser__circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 15px;
+}
+
+.theme-v1-1503068776805-faux-browser__circle:nth-child(1) {
+  background-color: #ff5a57;
+  left: 15px;
+}
+
+.theme-v1-1503068776805-faux-browser__circle:nth-child(2) {
+  background-color: #ffb92e;
+  left: 35px;
+}
+
+.theme-v1-1503068776805-faux-browser__circle:nth-child(3) {
+  background-color: #00cc50;
+  left: 56px;
+}
+
+.theme-v1-1503068776805-faux-browser__title {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.theme-v1-1503068776805-faux-browser__title:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid orange;
+  transform: perspective(300px);
+  perspective-origin: 25% 75%;
+}
+
+.theme-v1-1503068776805-color-table {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  border: 1px solid #CDCDCD;
+  border-radius: 2px;
+}
+
+.theme-v1-1503068776805-color-table:not(:first-child) {
+  margin-top: 20px;
+}
+
+.theme-v1-1503068776805-color-table td {
+  padding: 20px;
+  border: none;
+}
+
+.theme-v1-1503068776805-color-table th {
+  text-align: left;
+  font-style: italic;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.theme-v1-1503068776805-color-table tr.theme-v1-1503068776805-dark td {
+  color: #EEE;
+}
+
+.theme-v1-1503068776805-col-demo {
+  padding: 10px;
+  background-color: #3652A3;
+  text-align: center;
+  color: #FFF;
+}
+
+.theme-v1-1503068776805-outer-col-demo {
+  background-color: #3652A3;
+  text-align: center;
+  color: #FFF;
+}
+
+.theme-v1-1503068776805-inner-col-demo {
+  padding: 10px;
+  background-color: #009999;
+  text-align: center;
+  color: #FFF;
+}

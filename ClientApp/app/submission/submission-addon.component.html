@@ -1,0 +1,518 @@
+﻿
+<div>
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-5">
+                <label class="update-documents-label" for="">Cedant Name:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <label class="update-documents-label" for="">Broker Name:</label>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div class="auto-complete" style="width:500px;">
+                    <input type="search" class="auto-complete__field" id="txtCedentName" placeholder="Cedant Name..."
+                           name="cedantKey" [(ngModel)]="submission.cedantName"
+                           [class.ng-invalid]="!submission.cedantKey"
+                           [disabled]="IsRenwalForm">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <div class="auto-complete" style="width:500px;">
+                    <input type="search" class="auto-complete__field" id="txtBrokerName" placeholder="Broker Name..."
+                           name="brokerKey" [(ngModel)]="submission.brokerName"
+                           [class.ng-invalid]="!submission.brokerKey"
+                           [disabled]="IsRenwalForm">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+        </div>
+    </div>
+
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-5">
+                <label class="update-documents-label" for="">XL Company:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <label class="update-documents-label" for="">Office:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div style="width:100%;">
+                    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.companyKey" (ngModelChange)="onCompanyChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+                        <option *ngFor="let company of companies" #CompanyOptions
+                                value="{{company.companyKey}}" [selected]="company.companyKey===submission.companyKey">
+                            {{company.companyName}}
+                        </option>
+                    </select>
+                    <input type="text" id="txtCompanyname" *ngIf="IsRenwalForm"
+                           name="companyname" class="form-control text-input"
+                           [(ngModel)]="submission.companyName"
+                           [disabled]="IsRenwalForm" style="width:500px;">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <div style="width:100%;">
+                    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.officeKey" (ngModelChange)="onClearanceOfficeChange($event)" *ngIf="!IsRenwalForm">
+                        <option *ngFor="let office of ClearanceOffice" #ClearanceOfficeOptions
+                                value="{{office.key}}" [selected]="office.key===submission.officeKey">
+                            {{office.value}}
+                        </option>
+                    </select>
+                    <input type="text" id="txtofficeName" *ngIf="IsRenwalForm"
+                           name="officeName" class="form-control text-input"
+                           [(ngModel)]="submission.officeName"
+                           [disabled]="IsRenwalForm">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+        </div>
+    </div>
+
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-5">
+                <label class="update-documents-label" for="">Underwriter:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-3">
+                <label class="update-documents-label" for="">Underwriter Year:</label>
+            </div>
+
+            <div class="col-3">
+                <label class="update-documents-label" for="">Fiscal Year:</label>
+            </div>
+            <!-- <div class="col-3">
+                &nbsp;
+            </div> -->
+
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div style="width:100%">
+                    <select class="col select select--bordered text-input full-width" id="ddlUnderwriter" [(ngModel)]="submission.underwriter" (ngModelChange)="onUWChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+                        <option *ngFor="let uw of underwriters" #UWOptions value="{{uw.loginName}}" [selected]="uw.loginName===submission.underwriter"> {{uw.underwriterName}}</option>
+                    </select>
+                    <input type="text" id="txtUnderWriter" *ngIf="IsRenwalForm"
+                           name="UnderWriter" class="form-control text-input"
+                           [(ngModel)]="submission.underwriterDisplayName"
+                           [disabled]="IsRenwalForm" style="width:500px;">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-3">
+                <div>
+                    <input type="text" id="txtUwYear" placeholder="Year"
+                           name="uwYear" class="form-control text-input"
+                           [(ngModel)]="submission.uwYear" maxlength="4" (keypress)="onKeypress($event)"
+                           [class.ng-invalid]="!submission.uwYear || submission.uwYear.length != 4"
+                           [disabled]="IsRenwalForm || IsNewSubForm">
+                    <!--<select class="col select select--bordered text-input full-width" id="ddluwYear" [(ngModel)]="submission.uwYear" (ngModelChange)="onUWChange($event)" *ngIf="!IsRenwalForm" style="width:200px;">
+
+        <option value="2018"> 2018</option>
+        <option value="2017"> 2017</option>
+        <option value="2016"> 2016</option>
+        <option value="2015"> 2015</option>
+        <option value="2014"> 2014</option>
+        <option value="2013"> 2013</option>
+    </select>
+    <input type="text" id="txtuwYear" *ngIf="IsRenwalForm"
+           name="uwYear" class="form-control text-input"
+           [(ngModel)]="submission.uwYear"
+           [disabled]="IsRenwalForm">-->
+                </div>
+
+
+
+            </div>
+
+            <div class="col-3">
+                <div>
+                    <input type="text" id="txtFiscalYear" [disabled]="true"
+                           name="FiscalYear" class="form-control text-input"
+                           [(ngModel)]="fiscalYear">
+                    <!--<select class="col select select--bordered text-input full-width" id="ddlUnderwriter" [(ngModel)]="submission.fiscalYear" (ngModelChange)="onUWChange($event)" *ngIf="!IsRenwalForm" style="width:210px;">
+        <option value="2018"> 2018</option>
+        <option value="2017"> 2017</option>
+        <option value="2016"> 2016</option>
+        <option value="2015"> 2015</option>
+        <option value="2014"> 2014</option>
+        <option value="2013"> 2013</option>
+    </select>
+    <input type="text" id="txtfiscalYear" *ngIf="IsRenwalForm"
+           name="fiscalYear" class="form-control text-input"
+           [(ngModel)]="submission.fiscalYear"
+           [disabled]="IsRenwalForm">-->
+                </div>
+
+            </div>
+
+            <!-- <div class="col-3">
+                &nbsp;
+            </div> -->
+
+        </div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-3">
+                <label class="update-documents-label" for="">Submission Date:</label>
+            </div>
+          
+            <div class="col-3">
+                <label class="update-documents-label" for="">Effective Date:</label>
+            </div>
+            <!-- <div class="col-1">
+                &nbsp;
+            </div> -->
+
+            <div class="col-3">
+                <label class="update-documents-label" for="">Expiration Date:</label>
+            </div>
+
+            
+
+            <div class="col-3">
+                <label class="update-documents-label" for="">Created Date:</label>
+            </div>
+            <!-- <div class="col-3">
+                &nbsp;
+            </div> -->
+
+
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <md-input-container  *ngIf="!IsRenwalForm">
+                        <input mdInput name="submissionDate"
+                               [mdDatepicker]="dpSubmissionDate"
+                               [(ngModel)]="submission.submissionDate"
+                               placeholder=""
+                               [disabled]="IsRenwalForm" style="width:160px;">
+                        <button mdSuffix [mdDatepickerToggle]="dpSubmissionDate" [disabled]="IsRenwalForm"></button>
+                    </md-input-container>
+                    <md-datepicker #dpSubmissionDate></md-datepicker>
+
+                    
+
+                    <input type="text" id="txtSubmissionDate" *ngIf="IsRenwalForm"
+                           name="submissionDate" class="form-control text-input"
+                           [(ngModel)]="submission.submissionDate"
+                           [disabled]="IsRenwalForm" style="width:160px;">
+                </div>
+            </div>
+
+           
+            <div class="col-3">
+                <div>
+                        <md-input-container *ngIf="!IsRenwalForm">
+                        <input mdInput name="effectiveDate"
+                               [mdDatepicker]="dpEffectiveDateDate"
+                               [(ngModel)]="submission.effectiveDate"
+                               placeholder=""
+                               [disabled]="IsRenwalForm" style="width:160px;">
+                        <button mdSuffix [mdDatepickerToggle]="dpEffectiveDateDate" [disabled]="IsRenwalForm"></button>
+                    </md-input-container>
+                    <md-datepicker #dpEffectiveDateDate (selectedChanged)="selectEffectiveDateChanged($event)"></md-datepicker>
+
+                  
+                    <input type="text" id="txtEffectiveDateDate" *ngIf="IsRenwalForm"
+                           name="effectiveDate" class="form-control text-input"
+                           [(ngModel)]="submission.effectiveDate"
+                           [disabled]="IsRenwalForm" style="width:160px;">
+                </div>
+            </div>
+            <!-- <div class="col-1">
+                &nbsp;
+            </div> -->
+
+            <div class="col-3">
+                <div>
+                            <md-input-container  *ngIf="!IsRenwalForm">
+                            <input mdInput name="expirationDate"
+                                   [mdDatepicker]="dpExpirationDate"
+                                   [(ngModel)]="submission.expirationDate"
+                                   placeholder=""
+                                   [disabled]="IsRenwalForm" style="width:160px;">
+                            <button mdSuffix [mdDatepickerToggle]="dpExpirationDate" [disabled]="IsRenwalForm"></button>
+
+                        </md-input-container>
+                        <md-datepicker #dpExpirationDate></md-datepicker>
+
+                   
+
+                    <input type="text" id="txtexpirationDate" *ngIf="IsRenwalForm"
+                           name="expirationDate" class="form-control text-input"
+                           [(ngModel)]="submission.expirationDate"
+                           [disabled]="IsRenwalForm" style="width:160px;">
+                </div>
+            </div>
+
+          
+
+            <div class="col-3">
+                <div>
+                        <md-input-container *ngIf="!IsRenwalForm">
+                        <input mdInput name="dateCleared"
+                                [mdDatepicker]="dpdateCleared"
+                                [(ngModel)]="submission.dateCleared"
+                                placeholder=""
+                                [disabled]="IsRenwalForm" style="width:160px;">
+                        <button mdSuffix [mdDatepickerToggle]="dpdateCleared" [disabled]="IsRenwalForm"></button>
+                    </md-input-container>
+                    <md-datepicker #dpdateCleared></md-datepicker>
+
+
+
+                    <input type="text" id="txtcreatedDate" *ngIf="IsRenwalForm"
+                           name="createdDate" class="form-control text-input"
+                           [(ngModel)]="submission.createdDate"
+                           [disabled]="IsRenwalForm" style="width:160px;">
+                </div>
+            </div>
+            <!-- <div class="col-3">
+                &nbsp;
+            </div> -->
+
+
+
+
+
+        </div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-5">
+                <label class="update-documents-label" for="">Program Title:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <label class="update-documents-label" for="">Coverage:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div>
+                    <input type="search" class="form-control text-input" id="txtProgramTitle" placeholder="Program Title..." name="programTitle" [(ngModel)]="submission.programTitle"
+                           [class.ng-invalid]="!submission.programTitle"
+                           maxlength="60" (keypress)="onKeypress($event)"
+                           [disabled]="IsRenwalForm || IsAddNewContractForm" style="width:500px;">
+                </div>
+            </div>
+
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <div>
+                    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.coverageKey" (ngModelChange)="onCoverageChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+                        <option *ngFor="let layertype of Coverage" #CoverageOptions
+                                value="{{layertype.typeId}}" [selected]="layertype.typeId===submission.coverageKey">
+                            {{layertype.typeDescription}}
+                        </option>
+                    </select>
+                    <input type="text" id="txtcoverage" *ngIf="IsRenwalForm"
+                           name="coverage" class="form-control text-input"
+                           [(ngModel)]="submission.coverageName"
+                           [disabled]="IsRenwalForm" style="width:500px;">
+                </div>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-5">
+                <label class="update-documents-label" for="">Line of Business:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <label class="update-documents-label" for="">Sub Line of Business:</label>
+            </div>
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-5">
+                <div>
+                    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.lobName" (ngModelChange)="onClassChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+                        <option *ngFor="let class of lineofbusiness" #ClassOptions
+                                value="{{class}}" [selected]="class===submission.lobName">
+                            {{class}}
+                        </option>
+                    </select>
+                    <input type="text" id="txtlobName" *ngIf="IsRenwalForm"
+                           name="lobName" class="form-control text-input"
+                           [(ngModel)]="submission.lobName"
+                           [disabled]="IsRenwalForm" style="width:500px;">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+            <div class="col-5">
+                <div>
+                    <select class="col select select--bordered text-input full-width" [(ngModel)]="submission.slobKey" (ngModelChange)="onsubClassChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+                        <option *ngFor="let subclass of sublineofbusiness" #SubClassOptions
+                                value="{{subclass.subTypeId}}" [selected]="subclass.subTypeId===submission.slobKey">
+                            {{subclass.subTypeDescription}}
+                        </option>
+                    </select>
+                    <input type="text" id="txslobName" *ngIf="IsRenwalForm"
+                           name="slobName" class="form-control text-input"
+                           [(ngModel)]="submission.slobName"
+                           [disabled]="IsRenwalForm" style="width:500px;">
+                </div>
+            </div>
+
+            <div class="col-1">
+                &nbsp;
+            </div>
+
+        </div>
+    </div>
+
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-12">
+                <label class="update-documents-label" for="">Notes</label>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <textarea rows="5" cols="12" id="txtNotes" placeholder="Notes..." name="Notes" maxlength="250" [(ngModel)]="submission.notes" style="width:1215px;">
+
+                     </textarea>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <div class="row">
+            <div class="col-12">
+                <label class="update-documents-label" for="">Champion:</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <textarea rows="5" cols="12" id="txtChampion" placeholder="Champion..." name="Champion" maxlength="250" [(ngModel)]="submission.champion" style="width:1215px;">
+
+                     </textarea>
+                    <!--<select class="col select select--bordered text-input full-width" [(ngModel)]="submission.championKey" (ngModelChange)="onCompanyChange($event)" *ngIf="!IsRenwalForm" style="width:500px;">
+        <option *ngFor="let company of companies" #CompanyOptions
+                value="{{company.companyKey}}" [selected]="company.companyKey===submission.championKey">
+            {{company.companyName}}
+        </option>
+    </select>
+    <input type="text" id="txtchampionName" *ngIf="IsRenwalForm"
+           name="championName" class="form-control text-input"
+           [(ngModel)]="submission.championName"
+           [disabled]="IsRenwalForm" style="width:500px;">-->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

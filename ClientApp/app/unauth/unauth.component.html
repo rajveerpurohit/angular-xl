@@ -1,0 +1,41 @@
+﻿<div style="position: absolute; height: 1px; width: 1px;overflow: hidden; clip-path: rect(0,0,1px,1px); opacity: .0001;">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="xl-catlin-logo" viewBox="0 0 180 50">
+            <title>xl-catlin-logo icon</title>
+            <g id="Desktop-story" fill="none" fill-rule="evenodd"><g id="Search-drop-down" fill-rule="nonzero"><g id="XL-Catlin-logo-black-cmyk-Copy"><path id="Rectangle-path" fill="#000" d="M0 0h180v50H0z" /><path d="M157 7.371L145.997 18 135 7.371 138.488 4l7.51 7.257L153.506 4 157 7.371zM138.488 32l7.51-7.255L153.511 32 157 28.63 145.997 18 135 28.63l3.488 3.37zM175 14.242h-10.226V4H160v15h14.985v-4.758H175zM57.058 36.19h8.83v1.405h-3.636v8.164h-1.558v-8.17h-3.636v-1.404.005zm20.414 9.569v-1.405h-5.293V36.19H70.62v9.569h6.852zm6.404-9.569h-1.558v9.569h1.558V36.19zm-41.934 7.485a4.419 4.419 0 0 1-2.545.788c-2.166 0-3.636-1.514-3.636-3.473-.01-.96.375-1.88 1.063-2.545a3.449 3.449 0 0 1 2.573-.965c.913.01 1.801.296 2.55.82v-1.776a5.945 5.945 0 0 0-2.597-.522c-3.23 0-5.35 2.215-5.35 5.009 0 2.794 2.114 4.988 5.35 4.988a5.884 5.884 0 0 0 2.597-.549V43.7l-.005-.025zM98 36.195h-1.558v6.315l-6.582-6.315h-.41v9.569h1.558V39.35l6.566 6.409h.41v-9.564H98zm-48.988 6.268h3.163l-1.522-3.369h-.098l-1.543 3.369zm6.55 3.275H53.77l-.972-1.943h-4.404l-.961 1.985h-1.777l4.79-9.569h.3l4.816 9.527zM24 45.995v-1.469h-5.405V36H17v10h7zM14 36.005L11.845 36l-2.848 3.624L6.155 36 4 36.005l3.917 4.99L4 45.989 6.155 46l2.842-3.629L11.845 46 14 45.99l-3.923-4.995z" id="Shape" fill="#FFFCE3" /></g></g></g>
+        </symbol>
+    </svg>
+</div>
+
+<div class="sidebar" style="height:31px; overflow:hidden;">
+    <svg width="180" height="50" class="sidebar__branding" viewBox="0 0 180 50"><use xlink:href="#xl-catlin-logo"></use></svg>
+</div>
+
+<div class="main">
+    <div class="header-bar">
+        <div class="grid">
+            <div class="row">
+                <div class="col flex-align-center">
+                    <div class="header-bar__title">Reinsurance Workbench</div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div align="center" style="margin-top:70px;">
+
+    <span>You do not have access to this application. If you need access, please raise an IT Help Ticket</span>
+    <div *ngIf="!isProd">
+        <span>
+            <a href="#" id="btnChangeUser">Change User</a>
+        </span>
+    </div>
+
+</div>
+
+
+<change-user></change-user>

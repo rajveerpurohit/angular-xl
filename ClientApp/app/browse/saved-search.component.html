@@ -1,0 +1,114 @@
+﻿<table class="listing-table" dnd-sortable-container [sortableData]="defaultSavedSearches">
+    <tbody>
+        <tr *ngFor="let item of defaultSavedSearches; let i = index" [class.selected-saved-search]="selectedSavedSearch==item" dnd-sortable
+            [sortableIndex]="i" (onDropSuccess)="onReorderCompleted(item, i+1)">
+            <td>
+                <a class="button button--text-only" (click)="onSavedSearchSelected(item)"> {{item.searchName}}</a>
+            </td>
+            <td width="80" class="listing-table__row-actions">
+                <div class="button-group">
+                    <span (click)="setHomeScreen(item,$event)" class="button button--icon-only full-height">
+                        <span id="homeGreen">
+                            <img [src]="src" />
+                        </span>
+                    </span>
+                    <button type="button" class="button button--icon-only full-height" disabled>
+                        <!-- <svg width="16" height="15" viewBox="0 0 16 15">
+                            <use xlink:href="#pencil"></use>
+                        </svg> -->
+                        <img src="../../assets/SVG/Edit Disabled.svg" />
+                    </button>
+                    <button type="button" class="button button--icon-only full-height" disabled>
+                        <!-- <svg width="16" height="17" viewBox="0 0 16 17">
+                            <use xlink:href="#bin"></use>
+                        </svg> -->
+                        <img src="../../assets/SVG/Delete Disabled.svg" />
+                    </button>
+                    <button type="button" class="button button--icon-only full-height pt-xxxs pb-xxxs" dnd-sortable-handle>
+                        <!-- <svg width="16" height="7" viewBox="0 0 16 7">
+                            <use xlink:href="#drag"></use>
+                        </svg> -->
+                        <img src="../../assets/SVG/Drag Disabled.svg" />
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 class="m-0 p-xs">Your searches</h3> {{showSaveSearchDialog}}
+<table class="listing-table" dnd-sortable-container [sortableData]="userSavedSearches">
+    <tbody *ngIf="userSavedSearches">
+        <tr *ngFor="let item of userSavedSearches; let i = index" [class.selected-saved-search]="selectedSavedSearch==item" dnd-sortable
+            [sortableIndex]="i" (onDropSuccess)="onReorderCompleted(item, i+1)">
+            <td>
+                <a class="button button--text-only" (click)="onSavedSearchSelected(item)">{{item.searchName}}</a>
+            </td>
+            <td>{{UserName}}</td>
+            <td>{{item.modifyDt | date:'dd MMM yyyy'}}</td>
+            <td width="80" class="listing-table__row-actions">
+                <div class="button-group">
+                    <span (click)="setHomeScreen(item,$event)" class="button button--icon-only full-height" >
+                        <span id="homeGreen">
+                            <img [src]="src" />
+                        </span>
+                    </span>
+                        <button type="button" class="button button--icon-only full-height" (click)="doEditSearch(item)" title="Edit">
+                            <!-- <svg width="16" height="15" viewBox="0 0 16 15">
+                                <use xlink:href="#pencil"></use>
+                            </svg> -->
+                            <img src="../../assets/SVG/Edit Disabled.svg" />
+                        </button>
+                        <button type="button" class="button button--icon-only full-height" (click)="showDeleteConfirm(item)" title="Delete">
+                            <!-- <svg width="16" height="17" viewBox="0 0 16 17">
+                                <use xlink:href="#bin"></use>
+                            </svg> -->
+                            <img src="../../assets/SVG/Delete Disabled.svg" />
+                        </button>
+                        <button type="button" class="button button--icon-only full-height pt-xxxs pb-xxxs" dnd-sortable-handle>
+                            <!-- <svg width="16" height="7" viewBox="0 0 16 7">
+                                <use xlink:href="#drag"></use>
+                            </svg> -->
+                            <img src="../../assets/SVG/Drag Disabled.svg" />
+                        </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="!userSavedSearches || userSavedSearches.length == 0">
+        <tr class="browse-empty-row">
+            <td colspan="4" style="text-align:center;font-size:medium;">
+                No saved search records found.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="over-layer" *ngIf="showDelete">
+    <div class="lightbox" style="display: flex;">
+        <div class="lightbox__inner">
+            <div class="lightbox__content" style="max-width:400px">
+                <div id="save-search">
+                    <h2>Delete Save search</h2>
+                    <p class="mt-xs">Are you sure to delete this Saved Search item?</p>
+                    <div class="grid mt-s">
+                        <div class="row">
+                            <div class="col-8 ml-a mr-a">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="button full-width text-center" type="button" id="save-search-submit" (click)="doDeleteSearch()">Ok</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="button button--secondary full-width text-center" type="button" (click)="cancel()" id="save-search-cancel">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / Status / Email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-Status-/-Email">
+            <circle id="Oval" fill="#999933" cx="15" cy="15" r="12"></circle>
+            <image id="email-84" x="7" y="7" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAQFJREFUWAntVtERgjAMbV1IHMERHMFJLJM4knUTN6h5HOFqEZpYuH7Y3PUC5eXl5R30MKbFvztgQwieTDhWMsJDQKjUfGh7qNkcvVMBZ9o70Xri4cYBTnBfYt5UgLHWelodgfoYWHjdgxPcxPP64MI7kMSNAbTf0fLJc80tajHMEHTt0mKTboz3D8qrhQt18bYb+6IHBgHnLJYEMPAXN7JTMzlyTgAwGjdEU4OUQyKAsWtuqKZmQmSNAOC/uaGeGkQcWgFcN7kRvWiOH2pyyVGMb/o6CrhTnr4aFiXJJQIk/FnM7CTMVmwMaAKaA82B5gAc2OP/T3pc1ewt1dhwOzvwBqCFFU7Q/bXMAAAAAElFTkSuQmCC"></image>
+        </g>
+    </g>
+</svg>

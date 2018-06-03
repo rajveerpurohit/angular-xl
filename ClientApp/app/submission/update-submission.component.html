@@ -1,0 +1,32 @@
+﻿<h2>Update  new program</h2>
+<div class="grid mt-m">
+  <form #submissionForm="ngForm" (ngSubmit)="updateSubmission()" style="margin-left: 18px;" autocomplete="off">
+
+      <div class="notice notice--error" *ngIf="message">
+          <div class="notice__title">Error</div>
+          <div class="notice__description">
+              {{message}} Program could not get updated. Notification has been sent to the support team who are investigating and request you please try again later.
+          </div>
+          <button class="button button--icon-only notice__close-button" (click)="onShowNoticeCloseClick()">
+              <svg width="17" height="17" viewBox="0 0 17 17"><use xlink:href="#cross"></use></svg>
+          </button>
+      </div>
+    <uwwb-submission [(submission)]="copiedSubmission" [IsRenwalForm]="false" [IsNewSubForm]="true" (submissionChange)="submissionChangedEvent($event)"
+                    (afterInit)="afterInitEvent($event)" >
+
+    </uwwb-submission>
+
+    <div class="form-group row">
+      <div class="col-2"></div>
+      <div class="col-4">
+        <button id="btnUpdate" type="submit" class="button" [disabled]="!isValid">Update Program</button>
+        <button id="btnSubmissionReset" type="button" class="button button--secondary" style="margin-left:20px;" (click)="reset()">Cancel</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+<!--<div class="over-layer" *ngIf="show">
+  <div class="loader">
+  </div>
+</div>-->

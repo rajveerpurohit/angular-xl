@@ -1,0 +1,19 @@
+﻿
+<div *ngFor="let noteRecord of releaseNotes; let y = index">
+    <h4>{{noteRecord.releaseNoteDescription}}</h4>
+    <ul>
+        <li *ngFor="let workItemRecord of noteRecord.workItemList; let x = index">
+            Work Item <a href="{{workItemRecord.workItemLink}}" target="_blank">{{workItemRecord.workItemNo}}</a> -- {{workItemRecord.workItemDescription}}
+            <ul *ngIf="workItemRecord.subWorkItems">
+                <li *ngFor="let subWorkItemRecord of workItemRecord.subWorkItems; let s = index">
+                    {{subWorkItemRecord}}
+                </li>
+            </ul>
+            <ul *ngIf="workItemRecord.dependencyWorkItems" style="padding-left: 0px;">
+                <li *ngFor="let dependencyWorkItemRecord of workItemRecord.dependencyWorkItems; let s = index">
+                    <span style="font-size:23px;">&#x26AD;</span> Dependency Work Item <a href="{{dependencyWorkItemRecord.workItemLink}}" target="_blank">{{dependencyWorkItemRecord.workItemNo}}</a> -- {{dependencyWorkItemRecord.workItemDescription}}
+                </li>
+            </ul>            
+        </li>
+    </ul>
+</div>

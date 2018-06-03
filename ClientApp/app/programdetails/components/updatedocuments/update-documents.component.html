@@ -1,0 +1,149 @@
+﻿<div class="update-documents" *ngIf="visible">
+    <div class="content" class="update-documents-content">
+        <div class="update-documents-heading">
+            <span>UPDATE CLASSIFICATION FOR {{updateDocList.length}} DOCUMENTS</span>
+        </div>
+        <div *ngIf="updateDoc" class="update-documents-form">
+            <form method="post" action="#">
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="update-documents-label" for="">Type:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="select select--bordered update-documents-field" name="ddlType" [(ngModel)]="updateDoc.typeDescription" (ngModelChange)="onTypeChange($event)">
+                                <option *ngFor="let opt of Types" value="{{opt.typeDescription}}" [selected]="opt.typeDescription===updateDoc.typeDescription"> {{opt.typeDescription}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="update-documents-label" for="" for="">SubType:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="select select--bordered update-documents-field" name="ddlSubType" [(ngModel)]="updateDoc.subTypeDescription" (ngModelChange)="onSubTypeChange($event)">
+                                <option *ngFor="let opt of SubTypes" value="{{opt.subTypeDescription}}" [selected]="opt.subTypeDescription===updateDoc.subTypeDescription">  {{opt.subTypeDescription}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="update-documents-label" for="">XlerateContract#:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="select select--bordered update-documents-field" name="ddlXleRate" [(ngModel)]="updateDoc.xLeRate" (ngModelChange)="setButtonDisable()" [disabled]="isxLeRateDisabled">
+                                <option value="" [selected]="opt===updateDoc.xLeRate">N/A</option>
+                                <option *ngFor="let opt of xlerateContractNo" value="{{opt}}" [selected]="opt===updateDoc.xLeRate">  {{opt}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label class="update-documents-label" for="">Short Description:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" style="flex-direction: column;">
+                            <input class="update-documents-field" type="text" maxlength="60" name="description" [(ngModel)]="updateDoc.description">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="update-documents-success" *ngIf="message?.length > 0 && errorMessage?.length == 0">
+                    {{message}}
+                </div>
+                <div class="update-documents-error" *ngIf="errorMessage?.length > 0">
+                    {{errorMessage}}
+                </div>
+
+                <br />
+                <div class="update-documents-buttons">
+                    <button type="button" class="button update-documents-update" (click)="updateDocument()" [disabled]="isButtonDisabled">UPDATE</button> &nbsp;
+                    <button type="button" class="button update-documents-cancel" style="background-color: #D8D8D8" (click)="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<div class="over-layer" *ngIf="visible">
+    <div class="content" style="width:500px;">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h2 class="title">UPDATE CLASSIFICATION</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="change-user-center">
+            <form class="form-horizontal" method="post" action="#" style="padding: 10px;">
+                <div class="form-group">
+                    <div class="row form-group form-group--inline">
+                        <div class="col-6">
+                            <label class="col ml-a" for="">Type</label>
+                        </div>
+                        <div class="col-6" style="flex-direction: column;">
+                            <select class="select select--bordered" name="ddlType" [(ngModel)]="updateDoc.typeDescription" (ngModelChange)="onTypeChange($event)">
+                                <option *ngFor="let opt of Types" value="{{opt.typeDescription}}" [selected]="opt.typeDescription===updateDoc.typeDescription"> {{opt.typeDescription}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row form-group form-group--inline">
+                        <div class="col-6">
+                            <label class="col ml-a" for="">SubType</label>
+                        </div>
+                        <div class="col-6" style="flex-direction: column;">
+                            <select class="select select--bordered" name="ddlSubType" [(ngModel)]="updateDoc.subTypeDescription" (ngModelChange)="onSubTypeChange($event)">
+                                <option *ngFor="let opt of SubTypes" value="{{opt.subTypeDescription}}" [selected]="opt.subTypeDescription===updateDoc.subTypeDescription">  {{opt.subTypeDescription}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row form-group form-group--inline">
+                        <div class="col-6">
+                            <label class="col ml-a" for="">XlerateContract#</label>
+                        </div>
+                        <div class="col-6" style="flex-direction: column;">
+                            <select class="select select--bordered" name="ddlXleRate" [(ngModel)]="updateDoc.xLeRate" (ngModelChange)="setButtonDisable()">
+                                <option value="" [selected]="opt===updateDoc.xLeRate">N/A</option>
+                                <option *ngFor="let opt of xlerateContractNo" value="{{opt}}" [selected]="opt===updateDoc.xLeRate">  {{opt}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row form-group form-group--inline">
+                        <div class="col-6">
+                            <label class="col ml-a" for="">Short Description</label>
+                        </div>
+                        <div class="col-6" style="flex-direction: column;">
+                            <input type="text" maxlength="60" name="description" [(ngModel)]="updateDoc.description">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center" style="color:forestgreen;font-weight:bold;" *ngIf="message?.length > 0 && errorMessage?.length == 0">
+                    {{message}}
+                </div>
+
+                <div class="form-group text-center" style="color:red;" *ngIf="errorMessage?.length > 0">
+                    {{errorMessage}}
+                </div>
+
+
+                <br />
+                <div class="form-group text-center">
+                    <button type="button" class="button" (click)="updateDocument()" [disabled]="isButtonDisabled">OK</button> &nbsp;
+                    <button type="button" class="button" (click)="cancel()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>-->

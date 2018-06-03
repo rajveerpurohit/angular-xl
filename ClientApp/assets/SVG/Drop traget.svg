@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon / Drop traget</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon-/-Drop-traget">
+            <g id="Group-2">
+                <g id="Icon-/-News-/-Black" fill="#1A1A1A" fill-rule="nonzero">
+                    <path d="M10.9458333,28.4351852 L26.0541667,28.4351852 L26.0541667,9.79814815 L10.9458333,9.79814815 L10.9458333,28.4351852 Z M9.86666667,8.63333333 L27.1333333,8.63333333 L27.1333333,29.6 L9.86666667,29.6 L9.86666667,8.63333333 Z" id="Rectangle-11"></path>
+                    <path d="M13.5666667,16.0333333 L17.2666667,16.0333333 L17.2666667,12.3333333 L13.5666667,12.3333333 L13.5666667,16.0333333 Z M12.3333333,11.1 L18.5,11.1 L18.5,17.2666667 L12.3333333,17.2666667 L12.3333333,11.1 Z" id="Rectangle"></path>
+                    <polygon id="Line" points="19.7333333 12.3333333 24.6666667 12.3333333 24.6666667 11.1 19.7333333 11.1"></polygon>
+                    <polygon id="Line-Copy" points="19.7333333 14.8 24.6666667 14.8 24.6666667 13.5666667 19.7333333 13.5666667"></polygon>
+                    <polygon id="Line-Copy-2" points="19.7333333 17.2666667 24.6666667 17.2666667 24.6666667 16.0333333 19.7333333 16.0333333"></polygon>
+                    <polygon id="Line-Copy-3" points="12.3333333 19.7333333 24.6666667 19.7333333 24.6666667 18.5 12.3333333 18.5"></polygon>
+                    <polygon id="Line-Copy-4" points="12.3333333 22.2 24.6666667 22.2 24.6666667 20.9666667 12.3333333 20.9666667"></polygon>
+                    <polygon id="Line-Copy-5" points="12.3333333 24.6666667 24.6666667 24.6666667 24.6666667 23.4333333 12.3333333 23.4333333"></polygon>
+                    <polygon id="Line-Copy-6" points="12.3333333 27.1333333 24.6666667 27.1333333 24.6666667 25.9 12.3333333 25.9"></polygon>
+                </g>
+                <circle id="Oval" stroke="#000000" fill="#FFFFFF" cx="24.9534884" cy="28.8255814" r="6.45348837"></circle>
+                <g id="Icon-/-Plus-/-Black" transform="translate(18.500000, 22.372093)" fill="#1A1A1A">
+                    <path d="M6.93333333,6.06666667 L9.53333333,6.06666667 L9.53333333,6.93333333 L6.93333333,6.93333333 L6.93333333,9.53333333 L6.06666667,9.53333333 L6.06666667,6.93333333 L3.46666667,6.93333333 L3.46666667,6.06666667 L6.06666667,6.06666667 L6.06666667,3.46666667 L6.93333333,3.46666667 L6.93333333,6.06666667 Z" id="Cross"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

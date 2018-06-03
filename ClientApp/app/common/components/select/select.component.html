@@ -1,0 +1,26 @@
+<!--<label><span *ngIf="list.label">{{list.label}}</span>
+      <select  class="select select--bordered form-control" *ngIf="list.listArray" id="selectModel" name="selectModel" [(ngModel)]="selectModel"  (ngModelChange)="updateSelect()" #name="ngModel">
+								 <option *ngFor="let listItem of list.listArray" [ngValue]="listItem">{{listItem}}</option>
+</label>-->
+<!--- the first div needs to be added to your component with the respective select classes -->
+<!--<div class="select select--compact select--bordered">-->
+<div [class.is-open]="isClicked === true">
+  <div class="select__inner" (click)="handleSelectEvent()">
+    <select class="select select--compact select--bordered select__input is-hidden" tabindex="-1"
+      style="display:none;" aria-hidden="true" data-choice="active" data-select-number="1">
+      <option value="all" selected="">{{selectedItem.value}}</option>
+    </select>
+    <div class="select__list">
+      <div class="select__selected-item select__item select__item--selectable" data-item="" data-id="1" data-value="all" aria-selected="true">{{selectedItem.value}}</div>
+    </div>
+  </div>
+  <div class="select__list select__list--dropdown select__list--dropdown-custom" tabindex="1" [class.is-active]="isClicked === true">
+        <div class="select__list" role="listbox">
+            <div *ngFor="let listItem of list.listArray" class="select__item choices__item--choice select__item--selectable" [ngClass]="{'is-highlighted': selectedItem === listItem }"
+                 tabindex="1"
+                 (mouseover)="addHighlightClass($event, listItem)"
+                 (click)="selectedOption(listItem)">{{listItem.value}}</div>
+        </div>
+    </div>
+</div>
+<!--</div>-->

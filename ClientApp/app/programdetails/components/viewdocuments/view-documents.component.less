@@ -1,0 +1,136 @@
+﻿.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.dialog {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 200px;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
+    padding: 12px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);
+}
+
+.document-content {
+    // padding-bottom: 10px;
+    background-color: #FFFFFF; // box-shadow: inset 0 -1px 0 0 #EEEEEE, 1px 1px 4px 0 rgba(0, 0, 0, 0.19);
+    .document-content--heading {
+        color: #4A4A4A;
+        font-family: "Effra Medium";
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+    }
+
+    .document-content-body {
+        padding: 15px 10px 25px 10px;
+        box-shadow: inset 0 -1px 0 0 #EEEEEE, 1px 5px 5px 0 rgba(0, 0, 0, 0.19);
+        position: absolute;
+        z-index: 1000;
+        background: white;
+    }
+
+    .drop-file img {
+        vertical-align: middle;
+    }
+
+    .result-table-head {
+        color: #003366
+    }
+
+    .result-table-head th {
+        font-family: "Open Sans";
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .result-table-head--input {
+        height: 18px;
+        width: 18px;
+        border: 1px solid #979797;
+        border-radius: 3px;
+        background-color: #F7F7F7;
+    }
+
+    .document-table--value {
+        font-size: 12px;
+        line-height: 17px;
+        color: #484848;
+    }
+
+    .document-table--value a {
+        font-size: 12px;
+        line-height: 17px;
+        color: #21409A;
+    }
+
+    .update-document--button {
+        margin-top: 21px;
+        margin-left: -20px;
+        margin-bottom: 11px;
+    }
+}
+
+@media (min-width: 768px) {
+    .dialog {
+        top: 100px;
+    }
+}
+
+.fixed-header-table {
+    .table-scroll tbody {
+        position: relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 600px;
+    }
+    
+    .table-scroll tr {
+        width: 100%;
+        table-layout: fixed;
+        display: inline-table;
+    }
+    
+    .table-scroll thead > tr > th {
+        border: none;
+    }
+
+    ::-webkit-scrollbar {
+        background: #ffffff;
+        border-radius: 4px;
+        height: 8px;
+        width: 8px;
+        }
+
+    ::-webkit-scrollbar-thumb {
+    background: #484848;
+    border-radius: 4px;
+    }
+}
+
+tbody,
+thead tr {
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody td {
+    word-break: break-all;
+}
+
+body {
+    background-color: #bdc3c7;
+}

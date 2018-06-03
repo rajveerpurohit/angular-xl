@@ -1,0 +1,233 @@
+﻿<h2>Find a program</h2>
+
+<div class="tabbed mt-xs" id="browseSearchTab">
+    <ul class="tabbed__tabs">
+        <li class="tabbed__tab">
+            <a class="tabbed__tab-link" href="#search-tab-1" (click)="onSearchTabClick(1)">
+                <span class="tabbed__tab-title rwb-title">Simple Search</span>
+            </a>
+        </li>
+        <li class="tabbed__tab">
+            <a class="tabbed__tab-link" href="#search-tab-2" (click)="onSearchTabClick(2)">
+                <span class="tabbed__tab-title rwb-title">Advanced Search</span>
+            </a>
+        </li>
+        <li class="tabbed__tab">
+            <a class="tabbed__tab-link" href="#search-tab-3" (click)="onSearchTabClick(3)">
+                <span class="tabbed__tab-title">Saved searches</span>
+            </a>
+        </li>
+        <li class="tabbed__collapse-control">
+            <a class="tabbed__collapse-control-link" href="#"><span class="tabbed__collapse-control-verb"></span> search options</a>
+        </li>
+    </ul>
+    <div class="tabbed__content-container">
+        <div class="tabbed__content" id="search-tab-1">
+            <div class="grid m-xs">
+                <div class="row no-gutters">
+                    <div class="col-3">
+                        <select class="col select select--bordered auto-width" (change)="onSimpleSearchTypeChange($event);" allowSort="false">
+                            <option value="Cedant" [selected]="criteriaType==='Cedant'">Cedant</option>
+                            <option value="Broker" [selected]="criteriaType==='Broker'">Broker</option>
+                            <option value="DestinyContractNumber" [selected]="criteriaType==='DestinyContractNumber'">Destiny Contract #</option>
+                            <option value="ProgramNumber" [selected]="criteriaType==='ProgramNumber'">Program #</option>
+                            <option value="ProgramTitle" [selected]="criteriaType==='ProgramTitle'">Program Title</option>
+                            <option value="UW" [selected]="criteriaType==='UW'">Underwriter Name</option>
+                            <option value="PLOB" [selected]="criteriaType==='PLOB'">Line of Business</option>
+                            <option value="Team" [selected]="criteriaType==='Team'">Team</option>
+                            <option value="CedantGroup" [selected]="criteriaType==='CedantGroup'">Cedant Group</option>
+                            <option value="DestinyContractStatus" [selected]="criteriaType==='DestinyContractStatus'">Destiny Contract Status</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <div class="auto-complete" style="width:100%;">
+                            <input id="txt-search-programs" type="search" name="CriteriaText" [(ngModel)]="simpleSearchCriteriaText" (keypress)="onSearchTextChange($event,criteriaType,simpleSearchCriteriaText)" placeholder="{{criteriaTypeText}}" class="auto-complete__field">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="button ml-s" (click)="simpleSearch()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabbed__content" id="search-tab-2">
+            <div class="grid grid--vertical-spacing m-xs">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group form-group--inline">
+                            <div class="form-element radio-input">
+                                <input class="radio-input__input" type="radio" name="search-match" id="search-match-all" [checked]="searchOptions.operator==='AND'" (click)="setCriteriaOperator('AND')"> <label class="radio-input__label" for="search-match-all">Match all search terms</label>
+                            </div>
+                            <div class="form-element radio-input">
+                                <input class="radio-input__input" type="radio" name="search-match" id="search-match-any" [checked]="searchOptions.operator==='OR'" (click)="setCriteriaOperator('OR')"> <label class="radio-input__label" for="search-match-any">Match any search terms</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form [formGroup]="myForm" novalidate *ngIf="myForm">
+                    <div formArrayName="Criterias">
+                        <div *ngFor="let criteriaRow of myForm.controls.Criterias.controls; let i=index" class="row no-gutters {{i==0? 'mt-m' : ''}}" [formGroupName]="i">
+                            <div class="form-group col-3">
+                                <select class="select select--bordered full-width" formControlName="CriteriaType" (change)="onAdvancedSearchTypeChange($event,i)" allowSort="false">
+                                    <option value="Cedant" [selected]="criteriaRow.get('CriteriaType').value==='Cedant'">Cedant</option>
+                                    <option value="Broker" [selected]="criteriaRow.get('CriteriaType').value==='Broker'">Broker</option>
+                                    <option value="DestinyContractNumber" [selected]="criteriaRow.get('CriteriaType').value==='DestinyContractNumber'">Destiny Contract #</option>
+                                    <option value="ProgramNumber" [selected]="criteriaRow.get('CriteriaType').value==='ProgramNumber'">Program #</option>
+                                    <option value="ProgramTitle" [selected]="criteriaRow.get('CriteriaType').value==='ProgramTitle'">Program Title</option>
+                                    <option value="UW" [selected]="criteriaRow.get('CriteriaType').value==='UW'">Underwriter Name</option>
+                                    <option value="OBU" [selected]="criteriaRow.get('CriteriaType').value==='OBU'">XL Company</option>
+                                    <option value="PLOB" [selected]="criteriaRow.get('CriteriaType').value==='PLOB'">Line of Business</option>
+                                    <option value="UWYear" [selected]="criteriaRow.get('CriteriaType').value==='UWYear'">Underwriting Year</option>
+                                    <option value="Team" [selected]="criteriaType==='Team'">Team</option>
+                                    <option value="CedantGroup" [selected]="criteriaType==='CedantGroup'">Cedant Group</option>
+                                    <option value="DestinyContractStatus" [selected]="criteriaType==='DestinyContractStatus'">Destiny Contract Status</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-6" style="margin-top:0;">
+                                <input id="txt-search-programs{{i}}" type="search" name="CriteriaText" formControlName="CriteriaText" (focus)="onTextBoxCriteriaFocus($event,i)"
+                                       placeholder="{{criteriaRow.get('CriteriaTypeText').value}}" class="auto-complete__field" (keypress)="onSearchTextChange($event,criteriaRow.get('CriteriaType').value,criteriaRow.get('CriteriaText').value)">
+                                <input type="hidden" class="form-control" formControlName="CriteriaTypeText">
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="button button--icon-only ml-xxs" (click)="removeCriteria(i)" *ngIf="(i>1)">
+                                    <svg width="14" height="14" viewBox="0 0 16 17"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cross"></use></svg>
+                                </button>
+                                <button type="button" class="button button--icon-only ml-xxs" (click)="addCriteria('Cedant', '', 'Cedant')" *ngIf="(myForm.controls.Criterias.controls.length == (i+1))"><svg width="14" height="14" viewBox="0 0 14 14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group row no-gutters mt-m" style="display:none;">
+                    <!--Hiding this functionality for now, if we need this simply remove style="display:none;"-->
+                    <label class="col-3 text-right pr-xs" for="">
+                        Only show results with:
+                    </label>
+                    <div class="col-6">
+                        <!--<select class="select select--bordered full-width" #ProgramOptions (change)="setProgramType($event)">-->
+                        <select class="col select select--bordered text-input full-width" #ProgramOptions (change)="setProgramType($event)">
+                            <option value="0" [selected]="programType==='0'">N/A</option>
+                            <option value="1" [selected]="programType==='1'">In Force</option>
+                            <option value="4" [selected]="programType==='4'">Pending</option>
+                            <option value="2" [selected]="programType==='2'">Expiring</option>
+                            <option value="3" [selected]="programType==='3'">Expired</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="button button--icon-only ml-xxs" style="display:none;"><svg width="14" height="14" viewBox="0 0 14 14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use></svg></button>
+                    </div>
+                </div>
+                <div class="form-group row no-gutters">
+                    <label class="col-3 text-right pr-xs" for="">
+                        Sort results by:
+                    </label>
+                    <div class="col-6">
+                        <!--<select class="select select--bordered full-width" #SortOptions (change)="setSortProp($event)">-->
+                        <select class="col select select--bordered text-input full-width" #SortOptions (change)="setSortProp($event)">
+                            <option value="CedantName" [selected]="searchOptions.sortBy==='CedantName'">Cedant Name</option>
+                            <option value="programTitle" [selected]="searchOptions.sortBy==='programTitle'">Program Title</option>
+                            <option value="plobDescription" [selected]="searchOptions.sortBy==='plobDescription'">PLOB</option>
+                            <option value="BrokerDescription" [selected]="searchOptions.sortBy==='BrokerDescription'">Broker</option>
+                            <option value="effectiveDate" [selected]="searchOptions.sortBy==='effectiveDate'">Effective Date</option>
+                            <option value="Status" [selected]="searchOptions.sortBy==='Status'">Status</option>
+                            <option value="UnderWriterDescription" [selected]="searchOptions.sortBy==='UnderWriterDescription'">Underwriter</option>
+                            <option value="CompanyDescription" [selected]="searchOptions.sortBy==='CompanyDescription'">XL Company</option>
+                            <option value="XLeRateContractNumbers" [selected]="searchOptions.sortBy==='XLeRateContractNumbers'">XleRate Contract #</option>
+                            <option value="ProgramNumber" [selected]="searchOptions.sortBy==='ProgramNumber'">Program #</option>
+                            <option value="championCompanyDescription" [selected]="searchOptions.sortBy==='championCompanyDescription'">Champion UW/XL Company</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-3"></div>
+                    <div class="col-9 flex-align-center">
+                        <button type="submit" class="button" (click)="advancedSearch()">Search</button>
+                        <button type="submit" class="button ml-xs" (click)="onSaveSearch()" *ngIf="isEditSearch">Save</button>
+                        <a class="button button--text-only ml-xs" (click)="createSavedSearch()">{{isEditSearch? 'Saved as new search':'Add to my saved searches'}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabbed__content p-0" id="search-tab-3">
+
+            <saved-search (savedCriteriachange)="savedSearchChangedEvent($event)"></saved-search>
+        
+        </div>
+
+    </div>
+</div>
+
+<div class="grid mt-s">
+    <div class="row">
+        <div class="col flex-align-center">
+            <h2>{{ParameterText}} {{(programCount>0 && currentTabIndex==1) ? "-" : "" }}  Programs found (<a (click)="exceldownload()" title="Export Excel" [class.enabled-link]="programCount>0">{{programCount}}</a>)</h2>
+        </div>
+        <div class="col flex-align-center">
+            <div class="grid grid--auto-cols">
+                <div class="row form-group form-group--inline">
+                    <div class="col-6">
+                        <label class="col ml-a" for="">Displaying:</label>
+                    </div>
+                    <div class="col-6">
+                        <!--<select class="col select select--bordered full-width" [(ngModel)]="teamGuid" (ngModelChange)="onTeamChange($event)">-->
+                        <select class="col select select--bordered text-input full-width" [(ngModel)]="searchOptions.teamGuid" (ngModelChange)="onTeamChange($event)">
+                            <option *ngFor="let opt of teams" #teamOptions value="{{opt.teamGuid}}" [selected]="opt.teamGuid===searchOptions.teamGuid"> {{opt.teamGuid > 0? 'Team -- ': ''}} {{opt.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<rwb-portfolio-view [datasource]="gridDataSource" [sortby]="''" [showRefineCriteriaMsg]="true" *ngIf="showGridView"></rwb-portfolio-view>
+
+
+<div class="mt-xs text-center" *ngIf="programs && gridDataSource && programs.length > gridDataSource.length">
+    <button type="button" class="button" id="load-more" (click)="loadMore()">Load more</button>
+</div>
+
+
+
+<div class="over-layer" *ngIf="showSaveSearchDialog">
+    <div class="lightbox" style="display: flex;">
+        <div class="lightbox__inner">
+            <div class="lightbox__content" style="max-width:400px">
+                <div id="save-search">
+                    <h2>Save search</h2>
+                    <p class="mt-xs">You can save your search to reuse from for saved searches list. Saved searches can be edited or deleted at any time.</p>
+                    <div class="form-group grid">
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Search name:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="text-input" id="txtSearchName" [(ngModel)]="searchname" max="80"
+                                       (keypress)="onSearchTextChange($event,'SAVEDSEARCH',searchname)" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid mt-s">
+                        <div class="row">
+                            <div class="col-8 ml-a mr-a">
+                                <div class="grid">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="button full-width text-center" type="button" id="save-search-submit" (click)="onSaveSearch()">Save</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="button button--secondary full-width text-center" type="button" (click)="showSaveSearchDialog = false;" id="save-search-cancel">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

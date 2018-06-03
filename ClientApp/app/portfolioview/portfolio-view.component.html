@@ -1,0 +1,208 @@
+﻿<div class="home-table-container scrollable table-responsive">
+    <table class="listing-table table-scroll content-wrapper listing-table--clickable-rows table" [mfSortOrder]="asc" [mfSortBy]="sortby"
+        [mfData]="filteredDatasource" #mf="mfDataTable" id="homeTable">
+        <thead class="result-table-head" style="position: sticky; top:0px;">
+            <tr>
+                <th class="listing-table__column-heading--sortable" style="width:12%;  min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="cedantName">Cedant Name</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'cedantName')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="programTitle">Program Title</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'programTitle')" id="programTitleFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="plobDescription">PLOB</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'plobDescription')" id="cedantNameFilter">
+                            <i class="fa  fa-search"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="brokerDescription">Broker</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'brokerDescription')">
+                            <i class="fa  fa-search"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:7%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="effectiveDate">Effective Date</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'effectiveDate')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:6%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="expirationDate">Expiry Date</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'expirationDate')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:5%;">
+                    <span>
+                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'status')">
+                            <i class="fa  fa-search"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="underWriterDescription">Underwriter </mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'underWriterDescription')" id="cedantNameFilter">
+                            <i class="fa  fa-search"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:7%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="companyDescription">XL Company</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'companyDescription')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; min-width:60px;">
+                    <span>
+                        <mfDefaultSorter by="programVersionNumbers">XLeRate Version #</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'programVersionNumbers')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:6%;">
+                    <span>
+                        <mfDefaultSorter by="programNumber">Program #</mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'programNumber')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:8%; word-break: break-all; ">
+                    <span>
+                        <mfDefaultSorter by="championUnderWriterName">Champion UW / </mfDefaultSorter>
+                    </span>
+                    <span>
+                        <a href="#" (click)="showPopover($event, 'championUnderWriterName')" id="cedantNameFilter">
+                            <i class="fa  fa-search" style="margin-top: 7px;"></i>
+                        </a>
+                    </span>
+                </th>
+                <th class="listing-table__column-heading--sortable" style="width:5%; ">
+                    <span>
+                        <mfDefaultSorter by="isRenewed">Renewed</mfDefaultSorter>
+                    </span>
+                </th>
+                <th style="width: 3%;">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody class="content" *ngIf="mf.data">
+            <tr *ngFor="let pgm of mf.data; let i = index;" (dblclick)="openNewTab(pgm)" [class.listing-table__disabled-row]="!isUserReadable(pgm.companyGuid)">
+                <td style="width:12%;  min-width:60px;">{{pgm.cedantName}}
+
+                </td>
+                <td style="width:8%; min-width:60px;">{{pgm.programTitle}}</td>
+                <td style="width:8%; min-width:60px;">{{pgm.plobDescription}}</td>
+                <td style="width:8%; min-width:60px;">{{pgm.brokerDescription}}</td>
+                <td style="width:7%; min-width:60px;">{{pgm.effectiveDate | date:'dd MMM y' }}</td>
+                <td style="width:6%; min-width:60px;">{{pgm.expirationDate | date:'dd MMM y' }}</td>
+                <td style="width:5%;">{{pgm.status}}</td>
+                <td style="width:8%; min-width:60px;">{{pgm.underWriterDescription}}</td>
+                <td style="width:7%; min-width:60px;" title="{{pgm.companyDescription}}">{{pgm.companyAbbreviatedName}}</td>
+                <td style="width:8%;word-break: break-all; min-width:60px;">{{pgm.programVersionNumbers}}</td>
+                <td style="width:6%">{{pgm.programNumber}}</td>
+                <td style="width:8%; min-width:60px;">{{pgm.championUnderWriterName}}/{{pgm.championCompanyDescription}}</td>
+                <td style="width:5%;text-align: center;">
+                    <img *ngIf="pgm.isRenewed==true" src="../../assets/SVG/Tick.svg">
+                </td>
+                <td style="width: 3%;" class="listing-table__row-actions" (click)="showActionDropDown($event, i)">
+                    <span [class]="selectedIndex === i ? 'showIcon' : 'hideIcon'"></span>
+                    <div class="result-action-container" style="width:18px;">
+                        <div class="action-drop result-action-drop-down select__list select__list--dropdown" aria-expanded="false">
+                            <div class="select__list" dir="ltr" role="listbox">
+                                <div *ngIf="pgm.isReadyForRenewal && isUserWritable(pgm.companyGuid)" class="select__item choices__item--choice select__item--selectable"
+                                    data-select-text="" data-choice="" data-choice-selectable="" data-id="1" data-value="" role="option"
+                                    aria-selected="true">
+                                    <a (click)="renew(pgm.programNumber)">
+                                        Renew
+                                    </a>
+                                </div>
+
+                                <div *ngIf="isUserReadable(pgm.companyGuid)" class="select__item choices__item--choice select__item--selectable" data-select-text=""
+                                    data-choice="" data-choice-selectable="" data-id="2" data-value="" role="option">
+                                    <a href="{{shareProgramUrl +'?'+'programNum='+ pgm.programNumber +'&programTitle='+ pgm.programTitle + '&cedantName=' + pgm.cedantName }}"
+                                        title="Email">
+                                        Email
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="!datasource || datasource.length == 0">
+            <tr class="browse-empty-row">
+                <td colspan="13" style="text-align:center;font-size:medium;width:5%;">
+                    No relevant records found.
+                    <span *ngIf="showRefineCriteriaMsg"> Please refine the search criterion.</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div *ngIf="popovershow" class="auto-search-popover" [style.left.px]="filterControlPosition">
+        <form class="form-inline fillter-box">
+            <input type="text" class="text-input" id="txtSearchName" max="80" (keyup)="onFilterChange($event, datasource)" autocomplete="off"
+             />
+            <i class="fa fa-search txt-searchicon"></i>
+            <div *ngIf="filteredData" class="auto-search-popover-results">
+                <div *ngFor="let filterdata of filteredData">
+                    <span (click)="onFilterSelction(filterdata)">{{filterdata[filterColumn]}}</span>
+                </div>
+            </div>
+            <div id="frmSearch" class="form-group text-center">
+                <button type="button" class="button btnfilter" (click)="onFilterSelction()">FILTER</button>
+                <button type="button" class="button btngray" (click)="cancelPopover()">CANCEL</button>
+                <a href="#" class="clearLink" style="color:#484848;padding-top:15px;text-align:left;float:left;padding-left:22px;padding-bottom:5px;text-decoration:none;cursor:pointer;pointer-events: none;"
+                      (click)="clearfiltter(datasource)">Clear filter</a>
+            </div>
+        </form>
+    </div>
+</div>

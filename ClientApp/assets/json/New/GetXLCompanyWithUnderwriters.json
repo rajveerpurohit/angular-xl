@@ -1,0 +1,1258 @@
+[
+  {
+    "companyKey": 37876,
+    "companyName": "Indian Harbor Insurance Company",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Lally",
+        "loginName": "A105220",
+        "pricingUserKey": 1009,
+        "underwriterName": "John, Lally"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Stephens",
+        "lastName": "Sean",
+        "loginName": "A108285",
+        "pricingUserKey": 1033,
+        "underwriterName": "Stephens, Sean"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": "North America"
+  },
+  {
+    "companyKey": 146091365,
+    "companyName": "XLC CRCH America",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Anthony ",
+        "lastName": "Petaccio ",
+        "loginName": "APETACCI",
+        "pricingUserKey": 927,
+        "underwriterName": "Anthony , Petaccio "
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Charles",
+        "lastName": "Cooper",
+        "loginName": "A001417",
+        "pricingUserKey": 334,
+        "underwriterName": "Charles, Cooper"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Dan",
+        "lastName": "Berry",
+        "loginName": "BERRDJ",
+        "pricingUserKey": 919,
+        "underwriterName": "Dan, Berry"
+      },
+      {
+        "firstName": "Danielle",
+        "lastName": "Volpe",
+        "loginName": "A020149",
+        "pricingUserKey": 803,
+        "underwriterName": "Danielle, Volpe"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Susin",
+        "loginName": "EMISUSIN",
+        "pricingUserKey": 962,
+        "underwriterName": "Emily, Susin"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "Kateri",
+        "lastName": "Brittell",
+        "loginName": "A018237",
+        "pricingUserKey": 963,
+        "underwriterName": "Kateri, Brittell"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kip",
+        "lastName": "Walker",
+        "loginName": "A001065",
+        "pricingUserKey": 740,
+        "underwriterName": "Kip, Walker"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Lauren",
+        "lastName": "Palazzi",
+        "loginName": "LPALAZZI",
+        "pricingUserKey": 917,
+        "underwriterName": "Lauren, Palazzi"
+      },
+      {
+        "firstName": "Lopes",
+        "lastName": "Joshua",
+        "loginName": "A114573",
+        "pricingUserKey": 1131,
+        "underwriterName": "Lopes, Joshua"
+      },
+      {
+        "firstName": "Lynn",
+        "lastName": "Stoner",
+        "loginName": "A019151",
+        "pricingUserKey": 610,
+        "underwriterName": "Lynn, Stoner"
+      },
+      {
+        "firstName": "Mark",
+        "lastName": "Bouchane",
+        "loginName": "MBOUCHANE",
+        "pricingUserKey": 958,
+        "underwriterName": "Mark, Bouchane"
+      },
+      {
+        "firstName": "Matthew",
+        "lastName": "Poon",
+        "loginName": "A018274",
+        "pricingUserKey": 517,
+        "underwriterName": "Matthew, Poon"
+      },
+      {
+        "firstName": "Michael",
+        "lastName": "Orlich",
+        "loginName": "MIORLICH",
+        "pricingUserKey": 921,
+        "underwriterName": "Michael, Orlich"
+      },
+      {
+        "firstName": "Mike",
+        "lastName": "Wallin",
+        "loginName": "WALLM1",
+        "pricingUserKey": 807,
+        "underwriterName": "Mike, Wallin"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Roger",
+        "lastName": "Carbonier",
+        "loginName": "A014890",
+        "pricingUserKey": 485,
+        "underwriterName": "Roger, Carbonier"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Steve",
+        "lastName": "Donnelly",
+        "loginName": "A019152",
+        "pricingUserKey": 609,
+        "underwriterName": "Steve, Donnelly"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": "North America"
+  },
+  {
+    "companyKey": 33453,
+    "companyName": "Greenwich Insurance Company",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Lally",
+        "loginName": "A105220",
+        "pricingUserKey": 1009,
+        "underwriterName": "John, Lally"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Lopes",
+        "lastName": "Joshua",
+        "loginName": "A114573",
+        "pricingUserKey": 1131,
+        "underwriterName": "Lopes, Joshua"
+      },
+      {
+        "firstName": "Lynn",
+        "lastName": "Stoner",
+        "loginName": "A019151",
+        "pricingUserKey": 610,
+        "underwriterName": "Lynn, Stoner"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Stephens",
+        "lastName": "Sean",
+        "loginName": "A108285",
+        "pricingUserKey": 1033,
+        "underwriterName": "Stephens, Sean"
+      },
+      {
+        "firstName": "Steve",
+        "lastName": "Donnelly",
+        "loginName": "A019152",
+        "pricingUserKey": 609,
+        "underwriterName": "Steve, Donnelly"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": "North America"
+  },
+  {
+    "companyKey": 34251,
+    "companyName": "XL Re America",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Anthony ",
+        "lastName": "Petaccio ",
+        "loginName": "APETACCI",
+        "pricingUserKey": 927,
+        "underwriterName": "Anthony , Petaccio "
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Charles",
+        "lastName": "Cooper",
+        "loginName": "A001417",
+        "pricingUserKey": 334,
+        "underwriterName": "Charles, Cooper"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Dan",
+        "lastName": "Berry",
+        "loginName": "BERRDJ",
+        "pricingUserKey": 919,
+        "underwriterName": "Dan, Berry"
+      },
+      {
+        "firstName": "Danielle",
+        "lastName": "Volpe",
+        "loginName": "A020149",
+        "pricingUserKey": 803,
+        "underwriterName": "Danielle, Volpe"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Susin",
+        "loginName": "EMISUSIN",
+        "pricingUserKey": 962,
+        "underwriterName": "Emily, Susin"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Lally",
+        "loginName": "A105220",
+        "pricingUserKey": 1009,
+        "underwriterName": "John, Lally"
+      },
+      {
+        "firstName": "Kateri",
+        "lastName": "Brittell",
+        "loginName": "A018237",
+        "pricingUserKey": 963,
+        "underwriterName": "Kateri, Brittell"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kip",
+        "lastName": "Walker",
+        "loginName": "A001065",
+        "pricingUserKey": 740,
+        "underwriterName": "Kip, Walker"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Lauren",
+        "lastName": "Palazzi",
+        "loginName": "LPALAZZI",
+        "pricingUserKey": 917,
+        "underwriterName": "Lauren, Palazzi"
+      },
+      {
+        "firstName": "Lopes",
+        "lastName": "Joshua",
+        "loginName": "A114573",
+        "pricingUserKey": 1131,
+        "underwriterName": "Lopes, Joshua"
+      },
+      {
+        "firstName": "Lynn",
+        "lastName": "Stoner",
+        "loginName": "A019151",
+        "pricingUserKey": 610,
+        "underwriterName": "Lynn, Stoner"
+      },
+      {
+        "firstName": "Mark",
+        "lastName": "Bouchane",
+        "loginName": "MBOUCHANE",
+        "pricingUserKey": 958,
+        "underwriterName": "Mark, Bouchane"
+      },
+      {
+        "firstName": "Matthew",
+        "lastName": "Poon",
+        "loginName": "A018274",
+        "pricingUserKey": 517,
+        "underwriterName": "Matthew, Poon"
+      },
+      {
+        "firstName": "Michael",
+        "lastName": "Orlich",
+        "loginName": "MIORLICH",
+        "pricingUserKey": 921,
+        "underwriterName": "Michael, Orlich"
+      },
+      {
+        "firstName": "Mike",
+        "lastName": "Wallin",
+        "loginName": "WALLM1",
+        "pricingUserKey": 807,
+        "underwriterName": "Mike, Wallin"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Stephens",
+        "lastName": "Sean",
+        "loginName": "A108285",
+        "pricingUserKey": 1033,
+        "underwriterName": "Stephens, Sean"
+      },
+      {
+        "firstName": "Steve",
+        "lastName": "Donnelly",
+        "loginName": "A019152",
+        "pricingUserKey": 609,
+        "underwriterName": "Steve, Donnelly"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": "North America"
+  },
+  {
+    "companyKey": 294274650,
+    "companyName": "Catlin Insurance Company Inc.",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Lally",
+        "loginName": "A105220",
+        "pricingUserKey": 1009,
+        "underwriterName": "John, Lally"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Lopes",
+        "lastName": "Joshua",
+        "loginName": "A114573",
+        "pricingUserKey": 1131,
+        "underwriterName": "Lopes, Joshua"
+      },
+      {
+        "firstName": "Lynn",
+        "lastName": "Stoner",
+        "loginName": "A019151",
+        "pricingUserKey": 610,
+        "underwriterName": "Lynn, Stoner"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Stephens",
+        "lastName": "Sean",
+        "loginName": "A108285",
+        "pricingUserKey": 1033,
+        "underwriterName": "Stephens, Sean"
+      },
+      {
+        "firstName": "Steve",
+        "lastName": "Donnelly",
+        "loginName": "A019152",
+        "pricingUserKey": 609,
+        "underwriterName": "Steve, Donnelly"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": null
+  },
+  {
+    "companyKey": 146091359,
+    "companyName": "XLC Syndicate 2003 – America",
+    "pricingRoleCode": "RW",
+    "underwriter": [
+      {
+        "firstName": "Anna",
+        "lastName": "Rozumov",
+        "loginName": "A013434",
+        "pricingUserKey": 189,
+        "underwriterName": "Anna, Rozumov"
+      },
+      {
+        "firstName": "Anthony ",
+        "lastName": "Petaccio ",
+        "loginName": "APETACCI",
+        "pricingUserKey": 927,
+        "underwriterName": "Anthony , Petaccio "
+      },
+      {
+        "firstName": "Ashely",
+        "lastName": "Emanuel",
+        "loginName": "A112138",
+        "pricingUserKey": 1096,
+        "underwriterName": "Ashely, Emanuel"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "McHugh",
+        "loginName": "A014133",
+        "pricingUserKey": 527,
+        "underwriterName": "Brian, McHugh"
+      },
+      {
+        "firstName": "Brian",
+        "lastName": "Udolph",
+        "loginName": "A001198",
+        "pricingUserKey": 366,
+        "underwriterName": "Brian, Udolph"
+      },
+      {
+        "firstName": "Bud",
+        "lastName": "Lockwood",
+        "loginName": "A018457",
+        "pricingUserKey": 553,
+        "underwriterName": "Bud, Lockwood"
+      },
+      {
+        "firstName": "Charles",
+        "lastName": "Cooper",
+        "loginName": "A001417",
+        "pricingUserKey": 334,
+        "underwriterName": "Charles, Cooper"
+      },
+      {
+        "firstName": "Christopher",
+        "lastName": "Buse",
+        "loginName": "A001052",
+        "pricingUserKey": 191,
+        "underwriterName": "Christopher, Buse"
+      },
+      {
+        "firstName": "Connor",
+        "lastName": "Elliott",
+        "loginName": "A107839",
+        "pricingUserKey": 10006,
+        "underwriterName": "Connor, Elliott"
+      },
+      {
+        "firstName": "Dan",
+        "lastName": "Berry",
+        "loginName": "BERRDJ",
+        "pricingUserKey": 919,
+        "underwriterName": "Dan, Berry"
+      },
+      {
+        "firstName": "Danielle",
+        "lastName": "Volpe",
+        "loginName": "A020149",
+        "pricingUserKey": 803,
+        "underwriterName": "Danielle, Volpe"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Shelley",
+        "loginName": "A017271",
+        "pricingUserKey": 532,
+        "underwriterName": "Emily, Shelley"
+      },
+      {
+        "firstName": "Emily",
+        "lastName": "Susin",
+        "loginName": "EMISUSIN",
+        "pricingUserKey": 962,
+        "underwriterName": "Emily, Susin"
+      },
+      {
+        "firstName": "Emma",
+        "lastName": "Davies",
+        "loginName": "A021087",
+        "pricingUserKey": 1156,
+        "underwriterName": "Emma, Davies"
+      },
+      {
+        "firstName": "Gregory",
+        "lastName": "Dyer",
+        "loginName": "A001260",
+        "pricingUserKey": 197,
+        "underwriterName": "Gregory, Dyer"
+      },
+      {
+        "firstName": "Hilda",
+        "lastName": "Lorenzo-Dizon",
+        "loginName": "A001089",
+        "pricingUserKey": 199,
+        "underwriterName": "Hilda, Lorenzo-Dizon"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Fliehler",
+        "loginName": "FLIEJH",
+        "pricingUserKey": 805,
+        "underwriterName": "John, Fliehler"
+      },
+      {
+        "firstName": "Kateri",
+        "lastName": "Brittell",
+        "loginName": "A018237",
+        "pricingUserKey": 963,
+        "underwriterName": "Kateri, Brittell"
+      },
+      {
+        "firstName": "Kevin",
+        "lastName": "Sullivan",
+        "loginName": "A018717",
+        "pricingUserKey": 575,
+        "underwriterName": "Kevin, Sullivan"
+      },
+      {
+        "firstName": "Kip",
+        "lastName": "Walker",
+        "loginName": "A001065",
+        "pricingUserKey": 740,
+        "underwriterName": "Kip, Walker"
+      },
+      {
+        "firstName": "Kyle",
+        "lastName": "Goeke",
+        "loginName": "A020836",
+        "pricingUserKey": 10020,
+        "underwriterName": "Kyle, Goeke"
+      },
+      {
+        "firstName": "Lauren",
+        "lastName": "Palazzi",
+        "loginName": "LPALAZZI",
+        "pricingUserKey": 917,
+        "underwriterName": "Lauren, Palazzi"
+      },
+      {
+        "firstName": "Lopes",
+        "lastName": "Joshua",
+        "loginName": "A114573",
+        "pricingUserKey": 1131,
+        "underwriterName": "Lopes, Joshua"
+      },
+      {
+        "firstName": "Lynn",
+        "lastName": "Stoner",
+        "loginName": "A019151",
+        "pricingUserKey": 610,
+        "underwriterName": "Lynn, Stoner"
+      },
+      {
+        "firstName": "Mark",
+        "lastName": "Bouchane",
+        "loginName": "MBOUCHANE",
+        "pricingUserKey": 958,
+        "underwriterName": "Mark, Bouchane"
+      },
+      {
+        "firstName": "Matthew",
+        "lastName": "Poon",
+        "loginName": "A018274",
+        "pricingUserKey": 517,
+        "underwriterName": "Matthew, Poon"
+      },
+      {
+        "firstName": "Michael",
+        "lastName": "Orlich",
+        "loginName": "MIORLICH",
+        "pricingUserKey": 921,
+        "underwriterName": "Michael, Orlich"
+      },
+      {
+        "firstName": "Mike",
+        "lastName": "Wallin",
+        "loginName": "WALLM1",
+        "pricingUserKey": 807,
+        "underwriterName": "Mike, Wallin"
+      },
+      {
+        "firstName": "Perry",
+        "lastName": "Winter",
+        "loginName": "A001014",
+        "pricingUserKey": 158,
+        "underwriterName": "Perry, Winter"
+      },
+      {
+        "firstName": "Roger",
+        "lastName": "Carbonier",
+        "loginName": "A014890",
+        "pricingUserKey": 485,
+        "underwriterName": "Roger, Carbonier"
+      },
+      {
+        "firstName": "Scott",
+        "lastName": "Mackie",
+        "loginName": "SCMACKIE",
+        "pricingUserKey": 1021,
+        "underwriterName": "Scott, Mackie"
+      },
+      {
+        "firstName": "Sheila",
+        "lastName": "Kelly",
+        "loginName": "A001104",
+        "pricingUserKey": 183,
+        "underwriterName": "Sheila, Kelly"
+      },
+      {
+        "firstName": "Stephens",
+        "lastName": "Sean",
+        "loginName": "A108285",
+        "pricingUserKey": 1033,
+        "underwriterName": "Stephens, Sean"
+      },
+      {
+        "firstName": "Steve",
+        "lastName": "Donnelly",
+        "loginName": "A019152",
+        "pricingUserKey": 609,
+        "underwriterName": "Steve, Donnelly"
+      },
+      {
+        "firstName": "Sue",
+        "lastName": "Stephens",
+        "loginName": "A000301",
+        "pricingUserKey": 737,
+        "underwriterName": "Sue, Stephens"
+      }
+    ],
+    "workflowGuid": null,
+    "workflowTaskGuid": null,
+    "workflowAssignedUsers": null,
+    "region": "North America"
+  }
+]

@@ -1,0 +1,36 @@
+[
+    {
+      "teamGuid": 230,
+      "name": "NA Property Multiline Treaty",
+      "teamOwnerGuid": null,
+      "activeInd": true,
+      "members": null,
+      "primaryKey": 230,
+      "addedDt": "2017-11-30T15:03:07",
+      "addedBy": "R02\\Rmoorthy",
+      "addedApp": "RITM0522915",
+      "modifyDt": "2017-11-30T15:03:07",
+      "modifyBy": "R02\\Rmoorthy",
+      "modifyApp": "RITM0522915",
+      "version": 1,
+      "changedStatus": 0,
+      "entityAssociations": null
+    },
+    {
+      "teamGuid": 241,
+      "name": "NA Property Treaty",
+      "teamOwnerGuid": null,
+      "activeInd": true,
+      "members": null,
+      "primaryKey": 241,
+      "addedDt": "2017-11-30T15:03:07",
+      "addedBy": "R02\\Rmoorthy",
+      "addedApp": "RITM0522915",
+      "modifyDt": "2017-11-30T15:03:07",
+      "modifyBy": "R02\\Rmoorthy",
+      "modifyApp": "RITM0522915",
+      "version": 1,
+      "changedStatus": 0,
+      "entityAssociations": null
+    }
+  ]

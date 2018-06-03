@@ -1,0 +1,113 @@
+
+<input class="sidebar-toggler__input" id="sidebar-toggler" type="checkbox" />
+<label class="sidebar-toggler__label" for="sidebar-toggler">
+    <span class="sidebar-toggler__line"></span>
+    <span class="sidebar-toggler__line"></span>
+    <span class="sidebar-toggler__line"></span>
+</label>
+<div class="sidebar">
+    <img src="../../assets/SVG/XL_Catlin_logo_black_rgb.svg" />
+    <ul class="sidebar__menu">
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/home']">
+                <img src="../../assets/SVG/Home.svg" />Home
+            </a>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" (click)="browseNavigation()">
+                <img src="../../assets/SVG/Search.svg" />Search
+            </a>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/newsubmission']">
+                <img src="../../assets/SVG/New Program.svg" />New
+            </a>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/todo']">
+                <img src="../../assets/SVG/New Program.svg" />Todo
+            </a>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/assigned']">
+                <img src="../../assets/SVG/New Program.svg" />Assigned
+            </a>
+        </li>
+        <!--<li *ngIf="!isProduction" class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/about']">
+                <svg class="sidebar__menu-item-icon"><use xlink:href="#circle-document"></use></svg>
+                About
+            </a>
+        </li>-->
+    </ul>
+    <div class="footer-release-text">
+        <span class="release-version">Workbench v1.2.7 <br/>April 15 2018</span>
+        <span class="release-text">Release notes <img src="../../assets/SVG/Launcher White.svg" /></span>
+    </div>
+
+
+</div>
+
+
+<!--<input class="sidebar-toggler__input" id="sidebar-toggler" type="checkbox" />
+<label class="sidebar-toggler__label" for="sidebar-toggler">
+    <span class="sidebar-toggler__line"></span>
+    <span class="sidebar-toggler__line"></span>
+    <span class="sidebar-toggler__line"></span>
+</label>
+<div class="sidebar">
+    <svg width="180" height="50" class="sidebar__branding" viewBox="0 0 180 50"><use xlink:href="#xl-catlin-logo"></use></svg>
+    <ul class="sidebar__menu">
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/home']">
+                <svg class="sidebar__menu-item-icon sidebar__menu-item-icon--small"><use xlink:href="#house"></use></svg>
+                Home
+            </a>
+            <div class="sidebar__menu-sublist sidebar__menu-sublist--shift-left">
+                <div class="tree-list">
+                    <div class="tree-list__title">
+                        <svg class="tree-list__title-icon"><use xlink:href="#tree"></use></svg>
+                        View
+                    </div>
+                    <ul class="tree-list__list">
+                        <li class="tree-list__item" title="Inforce View - This view displays the programs which are currently active.">
+                            <a class="tree-list__link"
+                               [routerLink]="['/home',1, 'In Force']">In Force</a>
+                        </li>
+                        <li class="tree-list__item" title="Pending View - This view displays the programs which have an effective date in the future.">
+                            <a class="tree-list__link" 
+                               [routerLink]="['/home',4, 'Pending']">Pending</a>
+                        </li>
+                        <li class="tree-list__item" title="Expiring View - This view displays the programs which expire within 3 months of the current date.">
+                            <a class="tree-list__link" 
+                               [routerLink]="['/home',2, 'Expiring']">Expiring</a>
+                        </li>
+                        <li class="tree-list__item" title="Expired View - This view displays the programs which have expired in the last year, as well as Declined and Not taken.">
+                            <a class="tree-list__link" 
+                               [routerLink]="['/home',3, 'Expired']">Expired</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" (click)="browseNavigation()" >
+                <svg class="sidebar__menu-item-icon"><use xlink:href="#circle-briefcase"></use></svg>
+                Browse Programs
+            </a>
+        </li>
+        <li class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/newsubmission']">
+                <svg class="sidebar__menu-item-icon"><use xlink:href="#circle-plus"></use></svg>
+                New Program
+            </a>
+        </li>
+        <li *ngIf="!isProduction" class="sidebar__menu-item sidebar__menu-item--with-icon">
+            <a class="sidebar__menu-link sidebar__menu-link--with-icon" [routerLink]="['/about']">
+                <svg class="sidebar__menu-item-icon"><use xlink:href="#circle-document"></use></svg>
+                About
+            </a>
+        </li>
+    </ul>
+</div>-->

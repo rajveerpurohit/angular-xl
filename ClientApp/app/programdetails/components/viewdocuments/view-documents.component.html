@@ -1,0 +1,173 @@
+﻿<div *ngIf="visible">
+        <div id="classModal" class="document-content" aria-labelledby="classInfo" aria-hidden="true">
+            <div ng2FileDrop
+            [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+            (fileOver)="fileOverBase($event)" class="document-content-body" >
+                <div class="row">
+                    <div class="col-sm-10 col-10">
+                        <div class="document-content--heading">Documents ({{data.length}})</div>
+                    </div>
+                    <div *ngIf="updateDoc" (click)="showUploadDocument()" class="col-sm-2 drop-file">
+                        <span style="padding:5% 0 0 5%;">Drop new file</span>
+                        <img src="../../../../assets/SVG/Drop traget.svg">
+                    </div>
+                </div>
+                <div>
+                    <div class="table-responsive" style="height:522px; overflow-y:scroll;">
+                        <table class="table table-fixed listing-table listing-table--clickable-rows mt-xs" [mfData]="data" #mf="mfDataTable">
+                            <thead class="result-table-head">
+                                <tr>
+                                    <th>
+                                        <input class="result-table-head--input" type="checkbox" id="chkSelectAll" [(ngModel)]="selectedAll" (change)="selectAll()" />
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter initial="asc" by="document">Document</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="destinyReference">Destiny Contract #</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="type">Type</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="subType">Sub Type</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="addedDt">Date Added</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="shortDescription">Short Description</mfDefaultSorter>
+                                    </th>
+                                    <th>
+                                        <mfDefaultSorter by="xLeRate">XLeRate Contract #</mfDefaultSorter>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let docs of mf.data">
+                                    <td>
+                                        <input class="result-table-head--input" type="checkbox" id="chkSelectOne" [(ngModel)]="docs.isRowSelected" (change)="editDocument(docs)" />
+                                    </td>
+                                    <td class="document-table--value">
+                                        <a href="{{url}}?argDocumentID={{docs.documentID}}">{{docs.document}}</a>
+                                    </td>
+                                    <td class="document-table--value">{{docs.destinyReference ? docs.destinyReference : 'N/A' }}</td>
+                                    <td class="document-table--value">{{docs.type}}</td>
+                                    <td class="document-table--value">
+                                        {{docs.subType}}
+                                    </td>
+                                    <td class="document-table--value">{{docs.addedDt | date:'dd MMM yyyy'}}</td>
+                                    <td class="document-table--value">{{docs.shortDescription}}</td>
+                                    <td class="document-table--value">{{docs.xLeRate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div *ngIf="updateDoc" class="row update-document--button">
+                        <button type="button" class="button" id="btnUpdateClassification" (click)="launchUpdateDocPopup()" style="float:left; margin-top:5px; margin-left:20px;" [disabled]="!isValid">
+                            Update Classification
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <rwb-update-doc [(visible)]="showUpdateDocumentDialog" [updateDocList]="updateDocumentModels" [programNumber]="programNumber"
+                                            (onUpdateDocumentCompleted)="onUpdateDocumentCompleted($event)" (onUpdateDocumentClose)="onUpdateDocumentClose($event)" [xlerateContractNumbers]="xlerateContractNumbers"
+                                            (onUpdateDocumentClosedEvent)="onUpdateDocumentClosed($event)"></rwb-update-doc>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--<div *ngIf="visible">
+        <div id="classModal" class="document-content" aria-labelledby="classInfo" aria-hidden="true">
+            <div class="document-content document-content-body">
+                <div class="row">
+                    <div class="col-10">
+                        <h2 class="document-content--heading">Documents ({{data.length}})</h2>
+                    </div>
+                    <div class="col-2" style="float:right; font-size: 0.825em;">
+                        <a id="dropNewFile" (click)="showUploadDocument()" class="button button--text-with-icon">Drop new file
+                        <svg class="button__text-icon" width="16" height="20" viewBox="0 0 16 20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#new-file"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <table class="listing-table listing-table--clickable-rows mt-xs" [mfData]="data" #mf="mfDataTable">
+                                <thead class="result-table-head">
+                                    <tr>
+                                        <th style="width:3%; white-space: nowrap;">
+                                            <input class="result-table-head--input" type="checkbox" id="chkSelectAll" [(ngModel)]="selectedAll" (change)="selectAll()" />
+                                        </th>
+                                        <th style="width:20%; white-space: nowrap; max-width:200px;">
+                                            <mfDefaultSorter initial="asc" by="document">Document</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:15%; white-space: nowrap;">
+                                            <mfDefaultSorter by="destinyReference">Destiny Contract #</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:12%; white-space: nowrap;">
+                                            <mfDefaultSorter by="type">Type</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:10%; white-space: nowrap;">
+                                            <mfDefaultSorter by="subType">Sub Type</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:10%; white-space: nowrap;">
+                                            <mfDefaultSorter by="addedDt">Date Added</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:16%; white-space: nowrap; max-width:200px;">
+                                            <mfDefaultSorter by="shortDescription">Short Description</mfDefaultSorter>
+                                        </th>
+                                        <th style="width:12%; white-space: nowrap; padding-right:10px;">
+                                            <mfDefaultSorter by="xLeRate">XLeRate Contract #</mfDefaultSorter>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <div>
+                                        <tr *ngFor="let docs of mf.data">
+                                            <td style="width:3%;">
+                                                <input class="result-table-head--input" type="checkbox" id="chkSelectOne" [(ngModel)]="docs.isRowSelected" (change)="editDocument(docs)" />
+                                            </td>
+                                            <td class="document-table--value" style="width:20%; max-width:200px;">
+                                                <a href="{{url}}?argDocumentID={{docs.documentID}}">{{docs.document}}</a>
+                                            </td>
+                                            <td class="document-table--value" style="width:15%;">{{docs.destinyReference ? docs.destinyReference : 'N/A' }}</td>
+                                            <td class="document-table--value" style="width:12%;">{{docs.type}}</td>
+                                            <td class="document-table--value" style="width:10%;">
+                                                {{docs.subType}}
+                                            </td>
+                                            <td class="document-table--value" style="width:10%;">{{docs.addedDt | date:'dd MMM yyyy'}}</td>
+                                            <td class="document-table--value" style="width:16%;max-width:200px;">{{docs.shortDescription}}</td>
+                                            <td class="document-table--value" style="width:12%;">{{docs.xLeRate}}</td>
+                                        </tr>
+                                    </div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div *ngIf="updateDoc" class="row update-document--button">
+                        <button type="button" class="button" id="btnUpdateClassification" (click)="launchUpdateDocPopup()" style="float:left; margin-top:5px; margin-left:20px;" [disabled]="!isValid">
+                            Update Classification
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <rwb-update-doc [(visible)]="showUpdateDocumentDialog" [updateDocList]="updateDocumentModels" [programNumber]="programNumber"
+                                            (onUpdateDocumentCompleted)="onUpdateDocumentCompleted($event)" (onclosed)="onUpdateDocumentClose($event)" [xlerateContractNumbers]="xlerateContractNumbers"
+                                            (onUpdateDocumentClosedEvent)="onUpdateDocumentClosed($event)">
+                            </rwb-update-doc>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    

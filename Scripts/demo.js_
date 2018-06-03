@@ -1,0 +1,168 @@
+﻿if(document.getElementById("cedant-name")) {
+	(function(){
+
+		XL_LIB.plugins.autoComplete(document.getElementById("cedant-name"), function(term, suggest) {
+
+	        term = term.toLowerCase();
+	        //var choices = ['Daniel', 'Dante', 'Danne', 'Daphne', 'Dara', 'Darby', 'Darcie', 'Darryl'];
+	        var choices = [
+	        	["AXA France Assurance", "26 Rue Dutroit, Paris", "France"],
+	        	["AXA France Assurance", "370 Rue St Honore, Paris", "France"],
+	        	["AXA France Collectives", "370 Rue St Honore, Paris", "France"],
+	        	["AXA France IARD", "313 Terrasse De L Archent", "France"],
+	        	["AXA France VIE", "6 Rue Dutroit, Paris", "France"]
+	        ];
+	        var matches = [];
+	        var i;
+	        for (i = 0; i< choices.length; i++) {
+	        	var ii = 0;
+	        	if(typeof choices[i] === "string") {
+	        		if (~choices[i].toLowerCase().indexOf(term))  {
+	        			matches.push(choices[i]);
+	        		}
+	        	}
+	        	else {
+
+	        		for(ii = 0; ii < choices[i].length; ii++) {
+	        			if (~choices[i][ii].toLowerCase().indexOf(term))  {
+	        				matches.push(choices[i]);
+	        			}
+	        		}
+	        		
+	        	}
+	        }
+	        suggest(matches);
+
+	    });
+
+	})();
+}
+
+if(document.getElementById("broker-name")) {
+	(function(){
+
+		XL_LIB.plugins.autoComplete(document.getElementById("broker-name"), function(term, suggest) {
+
+	        term = term.toLowerCase();
+	        var choices = ['Daniel', 'Dante', 'Danne', 'Daphne', 'Dara', 'Darby', 'Darcie', 'Darryl'];
+	        var matches = [];
+	        var i;
+	        for (i = 0; i< choices.length; i++) {
+	            if (~choices[i].toLowerCase().indexOf(term))  {
+	            	matches.push(choices[i]);
+	            }
+	        }
+	        suggest(matches);
+
+	    });
+
+	})();
+}
+
+if(document.getElementById("program-tabs")) {
+	(function(){
+
+		XL_LIB.plugins.fileDrop(document.getElementById("program-tabs"), function() {
+
+	       
+
+	    });
+
+	})();
+}
+
+
+
+if(document.getElementById("select-quote")) {
+
+	(function(){
+		var selectPlugin = XL_LIB.plugins.select;
+
+		var el = document.getElementById("select-quote");
+		var selectInstance = selectPlugin.getSelect(el);
+
+		selectInstance.setChoices([
+			{ 
+				"value": '98167', 
+				"label": '98167',
+				"customProperties": {
+					"columns": [
+						{"Quote:": "M. Smith"},
+						"03-Aug-2017"
+					]
+				}
+			 },
+			{ 
+				"value": '98168', 
+				"label": '98168',
+				"customProperties": {
+					"columns": [
+						{"Quote:": "S. Kiddie"},
+						"03-Aug-2017"
+					]
+				}
+			},
+			{ 
+				"value": '98169', 
+				"label": '98169',
+				"customProperties": {
+					"columns": [
+						{"Quote:": "G. Gardner"},
+						"03-Aug-2017"
+					]
+				}
+			}
+		]);
+
+	})();
+
+}
+
+if(document.getElementById("load-more")) {
+	(function(){
+		document.getElementById("load-more").addEventListener("click", function(e){
+			XL_LIB.plugins.loadingOverlay.show();
+			setTimeout(function(){
+				XL_LIB.plugins.loadingOverlay.hide();
+			}, 1500);
+		});
+	})();
+}
+
+if(document.getElementById("add-to-my-saved-searches")) {
+	(function(){
+
+		document.getElementById("add-to-my-saved-searches").addEventListener("click", function(e){
+
+			e.preventDefault();
+
+			XL_LIB.plugins.lightbox.show(document.getElementById("save-search"), {
+				"style": {
+					"max-width": "400px"
+				}
+			});
+
+		});
+
+		document.getElementById("save-search-submit").addEventListener("click", function(e){
+
+			e.preventDefault();
+
+			XL_LIB.plugins.loadingOverlay.show();
+			setTimeout(function(){
+				XL_LIB.plugins.loadingOverlay.hide();
+				XL_LIB.plugins.lightbox.hide();
+			}, 1500);
+
+		});
+
+		document.getElementById("save-search-cancel").addEventListener("click", function(e){
+
+			e.preventDefault();
+
+			XL_LIB.plugins.lightbox.hide();
+
+		});
+		
+	})();
+}

@@ -1,0 +1,127 @@
+﻿<div [@dialog] *ngIf="visible" class="dialog">
+  <div id="classModal" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="classInfo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header" style="height: 25px; text-align:center;">
+        <h2>Upload Documents</h2>
+      </div>
+      <hr />
+      <div class="modal-content" style="background-color:#fff !important;">
+          <div class="modal-body">
+              <div ng2FileDrop
+                   [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                   (fileOver)="fileOverBase($event)"
+                   [uploader]="uploader"
+                   class="well my-drop-zone"
+                   style="height:130px;">
+                  <div style="font-size: 60px;text-align: center;margin-top: 10px;color: gainsboro;">drop here</div>
+              </div>
+
+              <form class="form-horizontal" method="post" action="#" style="padding: 10px;">
+                  <div class="form-group">
+                      <div class="row form-group form-group--inline">
+                          <div class="col-2">
+                              <label class="col ml-a" for="">Type</label>
+                          </div>
+                          <div class="col-4" style="flex-direction: column;">
+                              <select class="select select--bordered" name="ddlType" [(ngModel)]="saveDocModel.typeDescription" (ngModelChange)="onTypeChange($event)">
+                                  <option *ngFor="let opt of Types" value="{{opt.typeDescription}}" [selected]="opt.typeDescription===saveDocModel.typeDescription"> {{opt.typeDescription}}</option>
+                              </select>
+                          </div>
+
+                      </div>
+                      <div class="row form-group form-group--inline">
+                          <div class="col-2">
+                              <label class="col ml-a" for="">SubType</label>
+                          </div>
+                          <div class="col-4" style="flex-direction: column;">
+                              <select class="select select--bordered" name="ddlSubType" [(ngModel)]="saveDocModel.subTypeDescription" (ngModelChange)="onSubTypeChange($event)">
+                                  <option *ngFor="let opt of SubTypes" value="{{opt.subTypeDescription}}" [selected]="opt.subTypeDescription===saveDocModel.subTypeDescription">  {{opt.subTypeDescription}}</option>
+                              </select>
+                          </div>
+
+                      </div>
+                      <div class="row form-group form-group--inline">
+                          <div class="col-2">
+                              <label class="col ml-a" for="">XlerateContract#</label>
+                          </div>
+                          <div class="col-4" style="flex-direction: column;">
+                              <select class="select select--bordered" name="ddlXleRate" [(ngModel)]="saveDocModel.xLeRate">
+                                  <option value="" [selected]="opt===saveDocModel.xLeRate">N/A</option>
+                                  <option *ngFor="let opt of xlerateContractNo" value="{{opt}}" [selected]="opt===saveDocModel.xLeRate">  {{opt}}</option>
+                              </select>
+                          </div>
+
+                      </div>
+
+
+
+                      <div class="row form-group form-group--inline">
+                          <div class="col-6">
+                              <label class="col ml-a" for="">Short Description</label>
+                          </div>
+                          
+
+                      </div>
+
+                      <div class="row form-group form-group--inline" style="margin-top:0px !important;">
+
+                          <div class="col-12" style="flex-direction: column;">
+                              <!--<input type="text" style="margin: auto 10px;" maxlength="60"
+        name="description" class="form-control text-input"
+        [(ngModel)]="description">-->
+
+                              <input type="text" maxlength="60" style="margin-left:10px;"
+                                     name="description" class="form-control text-input"
+                                     [(ngModel)]="saveDocModel.description">
+                          </div>
+                      </div>
+
+                      </div>
+                      <div class="form-group text-center" style="color:forestgreen;font-weight:bold;" *ngIf="message?.length > 0 && errorMessage?.length == 0">
+                          {{message}}
+                      </div>
+
+                      <div class="form-group text-center" style="color:red;" *ngIf="errorMessage?.length > 0">
+                          {{errorMessage}}
+                      </div>
+
+
+
+</form>
+
+
+
+
+             
+              <div class="table-responsive" *ngIf="uploader?.queue?.length>0">
+                  <table class="listing-table listing-table--clickable-rows mt-xs" style="margin-top:7px!important;">
+                      <thead>
+                          <tr>
+                              <th style="width:20px;">Sl.No.</th>
+                              <th>Document</th>
+                          </tr>
+                      </thead>
+                  </table>
+                  <div style="padding:0;  margin:0; max-height:130px ;overflow-y:auto;">
+                      <table class="listing-table listing-table--clickable-rows mt-xs" style="margin-top:0!important;">
+                          <tr *ngFor="let item of uploader.queue; let i = index">
+                              <td style="width:36px;">{{i + 1}}</td>
+                              <td><strong>{{ item?.file?.name }}</strong></td>
+                          </tr>
+                      </table>
+                  </div>
+
+              </div>
+          </div>
+        <div class="form-group row">
+          <div class="col-7"></div>
+          <div class="col-5">
+            <button type="button" class="button" (click)="upload()" [disabled]="!uploader.getNotUploadedItems().length" style="margin-bottom: 5px; margin-right:5px;">Upload</button>
+            <button type="button" class="button" (click)="clear()" [disabled]="!uploader.queue.length" style="margin-bottom: 5px;margin-right:5px;">Clear</button>
+            <button type="button" class="button button--secondary" (click)="cancel()" style="margin-bottom: 5px;margin-right:5px;">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

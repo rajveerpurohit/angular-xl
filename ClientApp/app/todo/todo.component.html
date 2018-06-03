@@ -1,0 +1,152 @@
+<div class="container">
+	<div class="row">
+		<span class="todo-search-heading">Your to do list ({{todosCount}})</span>
+	</div>
+	<div class="row">
+		<div class="todo-table-container scrollable table-responsive">
+		    <table class="listing-table table-scroll content-wrapper listing-table--clickable-rows table" [mfSortOrder]="asc" [mfSortBy]="sortby"
+		        [mfData]="todos" #mf="mfDataTable" id="todoTable">
+		        <thead class="result-table-head" style="position: sticky; top:0px;">
+		            <tr>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="task">Task</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'task')" id="taskFilter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="description">Description</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'description')" id="descriptionFilter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="dueDate">Due Date</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'dueDate')" id="dueDateFilter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="createdBy">Created By</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'createdBy')">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="createdOn">Created On</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'createdOn')" id="createdOnFilter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="underwriter">Underwriter</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'underwriter')" id="underwriter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="">
+		                    <span>
+		                        <mfDefaultSorter by="xlCompany">Xl Company</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'xlCompany')">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th class="listing-table__column-heading--sortable" style="min-width:60px;">
+		                    <span>
+		                        <mfDefaultSorter by="note">Note</mfDefaultSorter>
+		                    </span>
+		                    <span>
+		                        <a href="#" (click)="showPopover($event, 'note')" id="noteFilter">
+		                            <i class="fa  fa-search"></i>
+		                        </a>
+		                    </span>
+		                </th>
+		                <th style="width: 3%;">&nbsp;</th>
+		            </tr>
+		        </thead>
+		        <tbody class="content" *ngIf="mf.data">
+		            <tr *ngFor="let todo of mf.data; let i = index;">
+		                <td>{{todo.task}}</td>
+		                <td>{{todo.description}}</td>
+		                <td>{{todo.dueDate}}</td>
+		                <td>{{todo.createdBy}}</td>
+		                <td>{{todo.createdOn}}</td>
+		                <td>{{todo.underwriter}}</td>
+		                <td>{{todo.xlCompany}}</td>
+		                <td>{{todo.note}}</td>
+		                <td style="width: 3%;" class="listing-table__row-actions" (click)="showActionDropDown($event, i)">
+		                    <span class='showIcon'></span>
+		                    <div class="result-action-container" style="width:18px;">
+		                        <div class="action-drop result-action-drop-down select__list select__list--dropdown" aria-expanded="false">
+		                            <div class="select__list" dir="ltr" role="listbox">
+		                                <div class="select__item choices__item--choice select__item--selectable"
+		                                    data-select-text="" data-choice="" data-choice-selectable="" data-id="1" data-value="" role="option"
+		                                    aria-selected="true">
+		                                    <a>
+		                                        Renew
+		                                    </a>
+		                                </div>
+
+		                                <div class="select__item choices__item--choice select__item--selectable" data-select-text=""
+		                                    data-choice="" data-choice-selectable="" data-id="2" data-value="" role="option">
+		                                    <a>
+		                                        title="Email">
+		                                        Email
+		                                    </a>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    <div *ngIf="popovershow" class="auto-search-popover" [style.left.px]="filterControlPosition">
+		        <form class="form-inline fillter-box">
+		            <input type="text" class="text-input" id="txtSearchName" max="80" (keyup)="onFilterChange($event)" autocomplete="off"
+		             />
+		            <i class="fa fa-search txt-searchicon"></i>
+		            <div *ngIf="filteredTodos" class="auto-search-popover-results">
+		                <div *ngFor="let filterTodo of filteredTodos">
+		                    <span (click)="onFilterSelction(filterTodo)">{{filterTodo[filterColumn]}}</span>
+		                </div>
+		            </div>
+		            <div id="frmSearch" class="form-group text-center">
+		                <button type="button" class="button btnfilter" (click)="onFilterSelction()">FILTER</button>
+		                <button type="button" class="button btngray" (click)="cancelPopover()">CANCEL</button>
+		                <a href="#" class="clearLink" style="color:#484848;padding-top:15px;text-align:left;float:left;padding-left:22px;padding-bottom:5px;text-decoration:none;cursor:pointer;pointer-events: none;"
+		                      (click)="clearfilter(dataSource)">Clear filter</a>
+		            </div>
+		        </form>
+		    </div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,29 @@
+﻿<div class="over-layer" *ngIf="show">
+  <div class="content" style="width:370px;">
+    <div class="panel-heading">
+      <div class="panel-title text-center">
+        <h2 class="title">Change User</h2>
+        <hr />
+      </div>
+    </div>
+    <div class="change-user-center">
+      <form class="form-horizontal" method="post" action="#">
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">User ID</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input type="text" class="form-control" name="name" maxlength="20" id="name" placeholder="Enter User ID" [(ngModel)]="userId" required />
+            </div>
+          </div>
+        </div>
+        <p class="text-warning">{{message}}</p>
+        <br />
+        <div class="form-group text-center">
+          <button type="button" class="button" (click)="submit()">Submit</button>
+          <button type="button" class="button" (click)="cancel()" >Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
